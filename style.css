@@ -52,15 +52,19 @@ a:hover{
 
 
 .hero{
+
 display: flex;
- max-width: 100%;
+ max-width: 600px;
  /* justify-content: center;
  align-items: center; */
  padding: 100px;
+ padding-top: 200px;
  margin: 0;
- margin-bottom: 0px;
-  padding-bottom:20px;
 
+}
+.hero img{
+  max-width: 200px;
+  border-style: solid;
 }
 
 .carousel-container {
@@ -69,6 +73,7 @@ display: flex;
   /* overflow: hidden; */
   position: relative;
   margin-top: 0;
+  margin-bottom: 200px;
  
 }
 
@@ -82,24 +87,43 @@ display: flex;
   /* height: 300px; */
   object-fit: cover;
 }
-
+.price{
+  margin-left:  100px;
+  margin-right:  100px;
+}
 .prices{
-max-width: 70%;
-justify-content: center;
-align-items: center;
-padding: 20px;
+/* max-width: 70%; */
 
+justify-content: center;
+display: flex;
+/* align-items: center; */
+
+margin-bottom: 300px;
+border-style: solid;
+}
+.priceChild{
+  display: flex;
+  padding: 20px;
+  width: ;
+}
+.consult{
+  margin-bottom: 20px;
+}
+.contact{
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-bottom: 100px;
 }
 
-.prices .refresh,
+/* .prices .refresh,
 .prices .treatments,
 .prices .transformations {
-  border-style: solid;
+
   
   max-width: 70%;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .protest-strike-regular {
   font-family: "Protest Strike", sans-serif;
