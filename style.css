@@ -1,39 +1,31 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f5f5f5;
-  }
-  
-  .carousel-container {
-    width: 80%;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .carousel-row {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 10px;
-    margin-bottom: 10px;
-    white-space: nowrap;
-    transition: transform 0.5s linear;
-  }
-  
-  .carousel-row img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-  }
-  
-  .reverse {
-    flex-direction: row-reverse; /* Make the second row scroll in reverse */
-  }
-  
+background-color: #976969;
+}
+
+body {
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+  /* background-color: #f5f5f5; */
+ margin: 0;
+}
+
+.carousel-container {
+  width: 300px; Match image width
+  /* height: 300px; */
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s linear;
+}
+
+.carousel img {
+  max-width: 300px; /* Image width */
+  /* height: 300px; */
+  object-fit: cover;
+}
