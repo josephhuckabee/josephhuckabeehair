@@ -18,23 +18,22 @@ allImages.forEach(src => {
   img.alt = 'Carousel Image';
   carousel.appendChild(img);
 });
+// Set initial position and scroll speed
+let position = 0;
+const scrollSpeed = 0.75; // Lower values for slower, smoother scrolling
 
-let currentIndex = 0;
-const scrollSpeed = 2000;
-const imageWidth = 300; // Define the width of each image
+// Function for smooth continuous scroll
+function continuousScroll() {
+  position -= scrollSpeed;
+  carousel.style.transform = `translateX(${position}px)`; // Move the carousel to the left
 
-// Auto-scroll function
-function autoScroll() {
-  currentIndex++;
-  if (currentIndex >= images.length) {
-    currentIndex = 0;
-    carousel.style.transition = 'none'; // Remove transition to avoid flashing
-    carousel.style.transform = 'translateX(0)'; // Reset to the first image
-  } else {
-    carousel.style.transition = 'transform 0.5s linear';
-    carousel.style.transform = `translateX(-${currentIndex * imageWidth}px)`; // Move by image width
+  // When the scroll reaches the end of the images, reset
+  if (Math.abs(position) >= carousel.scrollWidth / 2) {
+    position = 0; // Reset to the beginning for continuous scrolling
   }
+
+  requestAnimationFrame(continuousScroll); // Use requestAnimationFrame for smooth animation
 }
 
-// Start scrolling and continue every 'scrollSpeed' milliseconds
-setInterval(autoScroll, scrollSpeed);
+// Start the continuous scroll
+continuousScroll();
