@@ -6,7 +6,9 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
 
 body {
  margin: 0;
- background-color: #4c6e4e;
+
+
+ background-color: #01487e;
 
 }
 
@@ -25,9 +27,7 @@ header{
   height: 100px;
   margin: 0;
   padding-left: 20px;
-  background-color: #4c6e4e;
- 
- 
+  background-color: #01487e;
  
 }
 .pageNav{
@@ -60,7 +60,6 @@ margin-bottom: 40px;
 .hero img{
   max-width: 200px;
   border-style: solid;
-
 }
 
 .carousel-container {
@@ -75,7 +74,8 @@ margin-bottom: 40px;
 
 .carousel {
   display: flex;
-  transition: transform 0.5s linear;
+  transition: transform 0.75s linear;
+ 
  
 }
 
@@ -86,8 +86,9 @@ margin-bottom: 40px;
 }
 .price{
   margin-left:  100px;
-  margin-right:  100px;
 
+
+  margin-right:  100px;
 }
 
 .prices{
@@ -111,15 +112,18 @@ border-style: solid;
   margin-bottom: 100px;
 }
 
-/* .prices .refresh,
+.prices .refresh,
 .prices .treatments,
 .prices .transformations {
 
   
-  max-width: 70%;
   justify-content: center;
   align-items: center;
-} */
+  padding: 40px;
+  width: 33.33%;
+}
+
+
 
 .protest-strike-regular {
   font-family: "Protest Strike", sans-serif;
@@ -134,8 +138,9 @@ border-style: solid;
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  backdrop-filter: blur(10px);
-  opacity:1; Full opacity
+  background-color: rgba(32, 57, 100, 0.80);
+  backdrop-filter: blur(50px);
+  opacity:1; 
  
 }
 
@@ -149,12 +154,17 @@ border-style: solid;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-  
+  backdrop-filter: blur(5px); /* Apply blur effect */
+
+
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
 }
 
 .modal-content {
-  background-color:rgba(255, 255, 255, 0.322);
+
+
+  background-color:rgba(255, 255, 255, 1);
   margin: 15% auto; /* 15% from the top and centered */
   padding: 25px;
   /* border: 1px solid #888; */
