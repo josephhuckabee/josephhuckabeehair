@@ -1,3 +1,6 @@
+// ------------------------------------------------------------------------
+// JAVASCRIPT 1/2 | CAROUSEL -------------------------------------------
+// ------------------------------------------------------------------------
 // Image array
 const images = [
   'sam.jpeg', 'sage1.jpeg', 'angel2.webp', 'quinuse.jpg', 'morgan4.jpg', 
@@ -7,6 +10,7 @@ const images = [
 
 // Get the carousel container
 const carousel = document.getElementById('carousel');
+
 
 // Duplicate images for infinite scroll
 const allImages = images.concat(images);
@@ -37,3 +41,42 @@ function continuousScroll() {
 
 // Start the continuous scroll
 continuousScroll();
+
+// ------------------------------------------------------------------------
+// JAVASCRIPT 2/2 | MODAL POPUP -------------------------------------------
+// ------------------------------------------------------------------------
+// script.js
+
+// Get modal elements
+// script.js
+
+// Get modal elements
+const modal = document.getElementById("modal");
+const modalBackdrop = document.getElementById("modalBackdrop"); // Get the backdrop
+const closeModalButton = document.getElementById("closeModal");
+
+// Function to open the modal
+function openModal() {
+    modal.style.display = "block";
+    modalBackdrop.style.display = "block"; // Show the backdrop
+   
+}
+
+// Close modal when the close button is clicked
+closeModalButton.addEventListener("click", () => {
+    modal.style.display = "none";
+    modalBackdrop.style.display = "none"; // Hide the backdrop
+    document.body.style.filter = "none"; // Remove blur from body content
+});
+
+// Close modal when clicking anywhere outside the modal content
+window.addEventListener("click", (event) => {
+    if (event.target === modalBackdrop) { // Check if click is on the backdrop
+        modal.style.display = "none";
+        modalBackdrop.style.display = "none"; // Hide the backdrop
+        document.body.style.filter = "none"; // Remove blur from body content
+    }
+});
+
+// Open modal when the page loads
+window.onload = openModal;
