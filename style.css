@@ -1,188 +1,259 @@
+
+
 * {
 
-font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
- 
-}
-
-body {
- margin: 0;
-
-
- background-color: #01487e;
-
-}
-
-
-h1{
-  font-family: "Protest Strike", sans-serif;
-  font-size: 36pt;
-}
-
-header{
-  position: fixed;
-  display: flex;
-  justify-content: space-between; /* Align children */
-  align-items: center; 
-  width: 100%;
-  height: 100px;
-  margin: 0;
-  padding-left: 20px;
-  background-color: #01487e;
- 
-}
-.pageNav{
-  font-size: 18pt;
-  color: black;
-
-
-}
-
-a{
-  text-decoration: none;
-  color: black;
-  padding:50px;
-  background-color: none;
- 
-}
-a:hover{
-  font-size: 24pt;
-}
-
-
-.hero{
-display: flex;
- padding-top: 150px;
- margin: 0;
- margin-left:80px;
- margin-right:80px;
-margin-bottom: 40px;
-}
-.hero img{
-  max-width: 200px;
-  border-style: solid;
-}
-
-.carousel-container {
-  width: 300px; 
-  /* height: 300px; */
-  /* overflow: hidden; */
-  position: relative;
-  margin-top: 0;
-  margin-bottom: 100px;
-  z-index: -2;
-}
-
-.carousel {
-  display: flex;
-  transition: transform 0.75s linear;
- 
- 
-}
-
-.carousel img {
-  max-width: 300px; /* Image width */
-  /* height: 300px; */
-  object-fit: cover;
-}
-.price{
-  margin-left:  100px;
-
-
-  margin-right:  100px;
-}
-
-.prices{
-justify-content: center;
-display: flex;
-margin-bottom: 300px;
-border-style: solid;
-}
-.priceChild{
-  display: flex;
-  padding: 20px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   
+  }
   
-}
-.consult{
-  margin-bottom: 20px;
-
-}
-.contact{
-  margin-left: 200px;
-  margin-right: 200px;
-  margin-bottom: 100px;
-}
-
-.prices .refresh,
-.prices .treatments,
-.prices .transformations {
-
+  body {
+   margin: 0;
   
-  justify-content: center;
+  
+   background-color: #01487e;
+  
+  }
+  
+  
+  h1{
+    font-family: "Protest Strike", sans-serif;
+    font-size: 36pt;
+  }
+  
+  header{
+    position: fixed;
+    display: flex;
+    justify-content: space-between; /* Align children */
+    align-items: center; 
+    width: 100%;
+    height: 100px;
+    margin: 0;
+    padding-left: 20px;
+    background-color: #01487e;
+   
+  }
+  .pageNav{
+    font-size: 14pt;
+    color: black;
+  
+  
+  }
+  
+  a{
+    text-decoration: none;
+    color: black;
+    padding:20px;
+    background-color: none;
+   
+  }
+  a:hover{
+    font-size: 18pt;
+  }
+  
+  
+  /* .hero{
+  display: flex;
+   padding-top: 150px;
+   margin: 0;
+   margin-left:80px;
+   margin-right:80px;
+  margin-bottom: 40px;
+  }
+  .hero img{
+    max-width: 200px;
+    border-style: solid;
+  } */
+  
+
+ .book{
+  display: flex;
+  justify-content: flex-end;
   align-items: center;
-  padding: 40px;
-  width: 33.33%;
-}
+padding-top: 100px;
+margin-right: 10%;
 
 
+ }
 
-.protest-strike-regular {
-  font-family: "Protest Strike", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-/* Modal backdrop */
-.modal-backdrop {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  background-color: rgba(32, 57, 100, 0.80);
-  backdrop-filter: blur(50px);
-  opacity:1; 
+  
+  .pics{
+    display: flex;
+    padding-top: 100px;
+    margin: 0;
+    margin-left:80px;
+    margin-right:80px;
+   margin-bottom: 40px;
+  }
+  .carousel-container {
+    width: 300px; 
+    /* height: 300px; */
+    /* overflow: hidden; */
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 100px;
+    z-index: -2;
+  }
+  
+  .carousel {
+    display: flex;
+    transition: transform 0.75s linear;
+   
+   
+  }
+  
+  .carousel img {
+    max-width: 300px; /* Image width */
+    /* height: 300px; */
+    object-fit: cover;
+  }
+  .price{
+    margin-left:  100px;
+    margin-right:  100px;
  
+   
+  }
+  
+  .prices{
+  justify-content: center;
+  display: flex;
+  margin-bottom: 300px;
+  margin-left: 100px;
+  margin-right: 100px;
+  border-style: solid;
+  }
+  .priceChild{
+    display: flex;
+    padding: 20px;
+    
+  }
+  .consult{
+    margin-bottom: 20px;
+  
+  }
+  .contact{
+   max-width: 80%;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 100px; 
+    display: flex;
+  }
+  
+  .contact img{
+    max-width: 300px;
+  }
+  .prices .refresh,
+  .prices .treatments,
+  .prices .transformations {
+  
+   
+    
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    width: 33.33%;
+  }
+  
+  .biogg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 20px; */
+    max-width: 80%;
+    margin: 0 auto;
+
+  }
+  .biogg img{
+    max-width: 200px;
+  }
+  
+  .protest-strike-regular {
+    font-family: "Protest Strike", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  /* Modal backdrop */
+  .modal-backdrop {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(32, 57, 100, 0.80);
+    backdrop-filter: blur(50px);
+    opacity:1; 
+   
+  }
+  
+  /* Modal styles */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    backdrop-filter: blur(5px); /* Apply blur effect */
+  
+  
+  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+  }
+  
+  .modal-content {
+  
+  
+    background-color:rgba(255, 255, 255, 1);
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 25px;
+    /* border: 1px solid #888; */
+    width: 25%; /* Could be more or less, depending on screen size */
+    opacity: 1; /* Full opacity */
+    z-index: 1;
+  }
+  
+  .close-button {
+    color: #aaaaaa;
+    float: right;
+    font-size: 36px;
+    font-weight: bold;
+  }
+  
+  .close-button:hover,
+  .close-button:focus {
+    color: blue;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  #photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    /* margin: 10px auto; */
+    padding:100px;
+    width: 80%;
 }
 
-/* Modal styles */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  backdrop-filter: blur(5px); /* Apply blur effect */
-
-
-
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+#photo-gallery img {
+    margin: 0; auto;
+    width: 30%;
+    /* width: 200px; */
+    /* height: 3x; */
+    margin-right: 22px;
+    margin-bottom: 150px;
+    /* border-radius: 8px; */
 }
 
-.modal-content {
-
-
-  background-color:rgba(255, 255, 255, 1);
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 25px;
-  /* border: 1px solid #888; */
-  width: 25%; /* Could be more or less, depending on screen size */
-  opacity: 1; /* Full opacity */
-  z-index: 1;
+#iconic {
+ /* min-width: 50px; */
+  min-height: 50px; 
+  /* max-width: 50px; */
+  max-height: 50px;
 }
 
-.close-button {
-  color: #aaaaaa;
-  float: right;
-  font-size: 36px;
-  font-weight: bold;
-}
-
-.close-button:hover,
-.close-button:focus {
-  color: blue;
-  text-decoration: none;
-  cursor: pointer;
+#contactInfo {
+  display: flex;
+ 
 }
