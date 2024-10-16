@@ -232,17 +232,19 @@ margin-right: 10%;
     display: flex;
     flex-wrap: wrap;
     /* margin: 10px auto; */
-    padding:100px;
-    width: 80%;
+    padding-top:100px;
+    /* width: 100%; */
 }
 
 #photo-gallery img {
-    margin: 0; auto;
-    width: 30%;
-    /* width: 200px; */
-    /* height: 3x; */
-    margin-right: 22px;
-    margin-bottom: 150px;
+    /* margin: 0; auto; */
+    /* width: 50%; */
+    margin: 10px;
+    width: 200px;
+    height: 200x;
+    object-fit: cover;
+    /* margin-right: 22px;
+    margin-bottom: 150px; */
     /* border-radius: 8px; */
 }
 
