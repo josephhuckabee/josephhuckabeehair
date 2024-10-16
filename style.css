@@ -8,8 +8,6 @@
   
   body {
    margin: 0;
-  
-  
    background-color: #01487e;
   
   }
@@ -102,8 +100,8 @@ margin-right: 10%;
   }
   
   .carousel img {
-    max-width: 300px; /* Image width */
-    /* height: 300px; */
+    max-width: 350px; /* Image width */
+    height: 400px;
     object-fit: cover;
   }
   .price{
@@ -158,12 +156,13 @@ margin-right: 10%;
     justify-content: center;
     align-items: center;
     /* padding: 20px; */
-    max-width: 80%;
+    max-width: 60%;
     margin: 0 auto;
 
   }
   .biogg img{
     max-width: 200px;
+    padding: 10px;
   }
   
   .protest-strike-regular {
@@ -234,16 +233,21 @@ margin-right: 10%;
     /* margin: 10px auto; */
     padding-top:100px;
     /* width: 100%; */
+    overflow-y: auto; /* Add vertical scrolling */
+
+ max-height: 800px;
 }
 
 #photo-gallery img {
     /* margin: 0; auto; */
     /* width: 50%; */
     margin: 10px;
-    width: 200px;
-    height: 200x;
+    width:300px;
+    height: 375x;
+    
     object-fit: cover;
-    /* margin-right: 22px;
+
+    /* aspect-ratio: 1/1;    /* margin-right: 22px; */
     margin-bottom: 150px; */
     /* border-radius: 8px; */
 }

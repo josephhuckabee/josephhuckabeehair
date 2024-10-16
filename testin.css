@@ -1,4 +1,14 @@
-#iconic {
-    max-width: 50px;
-    max-height: 50px;
+body{
+    display: grid;
+    grid-template-columns: 25% 75%;
+}
+
+img{
+    max-width: 200px;
+
+}
+
+.bioContainer{
+   display: flex;
+   max-width: 600px;
 }

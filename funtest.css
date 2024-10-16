@@ -1,0 +1,92 @@
+  
+  body {
+    /* margin: 0; */
+    background-color: #01487e;
+   font-size: 18px;
+   display: grid;
+grid-template-rows: auto auto;
+   grid-template-columns: 1fr 6fr;
+   
+   }
+   
+   
+   h1{
+     font-family: "Protest Strike", sans-serif;
+     font-size: 36pt;
+     text-align: center; /* Center the text */
+     margin: 0;
+   }
+
+   a{
+        text-decoration: none;
+        color: black;
+        background-color: none;
+   }
+
+   header{
+    grid-column: 1 / -1;
+    margin-top: 10px;
+   }
+
+   nav {
+    grid-row: 2;
+    display: flex; /* Use flexbox for nav items */
+margin-left: 20px;
+margin-top: 20px;
+  
+}
+
+nav a {
+ 
+    text-decoration: none; /* Remove underline */
+    color: black; /* Set text color */
+   
+    font-size: 14pt;
+}
+  main{
+    grid-row: 2;
+    margin-top: 20px;
+   }
+
+   img{
+    max-height: 350px;
+   }
+
+   .carousel-container {
+    max-width: 800px; 
+    position: relative;
+    overflow: hidden;
+    margin-top: 0;
+    z-index: -2;
+  }
+  
+  .carousel {
+    display: flex;
+    transition: transform 0.90s linear;
+
+  }
+
+  .carasoul2 {
+    max-width: 1200px; 
+   
+  }
+  
+  .carousel img {
+    max-width: 350px; /* Image width */
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .bioContainer{
+    display: flex;
+    max-width: 800px;
+    margin-top: 20px;
+ }
+#icon{
+    max-width: 50px;
+}
+
+.talk{
+    font-size: 16pt;
+    align-items: center;
+}

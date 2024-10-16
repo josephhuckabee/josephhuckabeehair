@@ -3,8 +3,8 @@
 // ------------------------------------------------------------------------
 // Image array
 const images = [
-  'sam.jpeg', 'sage1.jpeg', 'angel2.webp', 'quinuse.jpg', 'morgan4.jpg', 
-  'julian.jpeg', 'mckenna.png', 'xiana.jpg', 'emma.jpg', 'taylor1.jpeg', 
+  'sam.jpeg', 'sage1.jpeg', 'angel2.webp', 'quinuse.jpg', 'jade.jpeg', 'ky3.jpeg', 'morgan4.jpg', 
+  'julian.jpeg', 'rat_headshot.jpeg','mckenna.png', 'xiana.jpg', 'emma.jpg','taylor1.jpeg', ,'kyblonde.jpeg', 
   'leoglass.jpeg', 'lucy.jpeg', 'quinn.jpeg', 'jazelle.jpg'
 ];
 
@@ -32,7 +32,7 @@ function continuousScroll() {
   carousel.style.transform = `translateX(${position}px)`; // Move the carousel to the left
 
   // When the scroll reaches the end of the images, reset
-  if (Math.abs(position) >= carousel.scrollWidth / 2) {
+  if (Math.abs(position) >= carousel.scrollWidth /4) {
     position = 0; // Reset to the beginning for continuous scrolling
   }
 

@@ -1,10 +1,11 @@
 const photoUrls = [
-    'howard1.jpeg','cat1.jpeg','heather_1.jpg',
-    'joe.jpg','ky1.jpeg','loorange.jpeg',
+    'howard1.jpeg','xiana2.jpg','benji.jpg',
+    'joe.jpg','kyblonde.jpeg','loorange.jpeg',
     'lucy.jpeg','lulu_orange.jpeg','morgan.jpg',
     'pink1.jpeg','pinkspurps.jpg','sage1.jpeg',
-    'sage1.jpeg','sage1.jpeg','sage1.jpeg',
-    'sage1.jpeg','sage1.jpeg','sage1.jpeg',
+    'mckenna.png','quinn.jpeg','witchy.jpg',
+    'sage1.jpeg','sage1.jpeg','sage1.jpeg', 
+    'heattechstan.jpeg','kyblo','','','','',
 ];
 
 // Function to display the photos
