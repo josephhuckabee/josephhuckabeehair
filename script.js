@@ -3,9 +3,9 @@
 // ------------------------------------------------------------------------
 // Image array
 const images = [
-  'sam.jpeg', 'sage1.jpeg', 'angel2.webp', 'quinuse.jpg', 'jade.jpeg', 'ky3.jpeg', 'morgan4.jpg', 
-  'julian.jpeg', 'rat_headshot.jpeg','mckenna.png', 'xiana.jpg', 'emma.jpg','taylor1.jpeg', ,'kyblonde.jpeg', 
-  'leoglass.jpeg', 'lucy.jpeg', 'quinn.jpeg', 'jazelle.jpg'
+  'sam.jpeg', 'sage1.jpeg', 'angel2.webp', 'taylore_bed.jpeg', 'quinuse.jpg', 'jade.jpeg', 'lean_style.png', 'morg_sit.png', 
+  'julian.jpeg', 'lucy.jpeg','hugs.jpeg', 'xiana.jpg', 'em_hands.png' ,'kyblonde.jpeg', 
+   'nour.jpeg', 'quinn.jpeg', 'jazelle.jpg', 'mckenna.png',
 ];
 
 // Get the carousel container
