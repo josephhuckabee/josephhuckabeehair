@@ -84,7 +84,7 @@ nav a {
   
   .carousel img {
     /* max-width: 350px; */
-    height: 800px;
+    height: 600px;
     object-fit: cover;
     padding: 10px;
   }
@@ -123,3 +123,38 @@ nav a {
     object-fit: cover;
    
 }
+
+.prices {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* gap: 5px; Space between columns */
+    /* text-align: center; */
+    /* border-style: solid; */
+}
+
+
+.prices div {
+  border-style: solid;
+}
+
+.contactpage{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 3 equal columns */
+    gap: 5px; /* Space between columns */
+    padding: 20px;
+    /* text-align: center; */
+}
+.contactpage div {
+    margin-top: 50px;
+   
+}
+.contactpage img{
+    max-width: 250px;
+}
+
+.conttactt{
+    margin-top: 50px;
+    display: grid;
+    gap: 5px; /* Space between columns */
+    /* padding: 20px; */
+    text-align: center;}
