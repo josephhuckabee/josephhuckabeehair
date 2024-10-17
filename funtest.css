@@ -1,7 +1,7 @@
   
   body {
     /* margin: 0; */
-    background-color: #01487e;
+    color: #0d0d0c;
    font-size: 18px;
    display: grid;
 grid-template-rows: auto auto;
@@ -12,15 +12,22 @@ grid-template-rows: auto auto;
    
    h1{
      font-family: "Protest Strike", sans-serif;
-     font-size: 36pt;
+     font-size: 50pt;
      text-align: center; /* Center the text */
      margin: 0;
+     color: #0d0d0c;
    }
 
    a{
         text-decoration: none;
-        color: black;
+        color: #0d0d0c;
         background-color: none;
+    margin-bottom: 20px;
+    font-size: 20pt;
+   }
+   a:hover{
+    color: palevioletred;
+  
    }
 
    header{
@@ -33,23 +40,27 @@ grid-template-rows: auto auto;
     display: flex; /* Use flexbox for nav items */
 margin-left: 20px;
 margin-top: 20px;
+
   
 }
 
 nav a {
  
     text-decoration: none; /* Remove underline */
-    color: black; /* Set text color */
-   
+    color: #0d0d0c;
     font-size: 14pt;
 }
   main{
     grid-row: 2;
     margin-top: 20px;
+    /* background-color: whitesmoke; */
+    max-width: 820px;
+    box-shadow: #0d0d0c;
+    padding: 10px;
    }
 
    img{
-    max-height: 350px;
+    /* max-height: 350px; */
    }
 
    .carousel-container {
@@ -58,6 +69,7 @@ nav a {
     overflow: hidden;
     margin-top: 0;
     z-index: -2;
+
   }
   
   .carousel {
@@ -67,26 +79,51 @@ nav a {
   }
 
   .carasoul2 {
-    max-width: 1200px; 
+    /* max-width: 1200px;  */
    
   }
   
   .carousel img {
-    max-width: 350px; /* Image width */
-    height: 400px;
+    /* max-width: 350px; */
+    height: 550px;
     object-fit: cover;
+    padding: 10px;
   }
 
   .bioContainer{
     display: flex;
     max-width: 800px;
     margin-top: 20px;
+
+    
  }
 #icon{
+    max-width: 35px;
+}
+#icon:hover{
     max-width: 50px;
 }
 
 .talk{
     font-size: 16pt;
     align-items: center;
+}
+
+
+#photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    /* margin: 10px auto; */
+    padding-top:100px;
+    /* width: 100%; */
+    overflow-y: auto; /* Add vertical scrolling */
+ max-height: 800px;
+
+}
+
+#photo-gallery img {
+   padding: 5px;
+    width: 350px;
+    object-fit: cover;
+   
 }

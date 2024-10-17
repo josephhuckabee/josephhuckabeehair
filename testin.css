@@ -11,4 +11,5 @@ img{
 .bioContainer{
    display: flex;
    max-width: 600px;
+   background-color: whitesmoke;
 }

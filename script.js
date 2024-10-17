@@ -24,7 +24,7 @@ allImages.forEach(src => {
 });
 // Set initial position and scroll speed
 let position = 0;
-const scrollSpeed = 0.75; // Lower values for slower, smoother scrolling
+const scrollSpeed = 1; // Lower values for slower, smoother scrolling
 
 // Function for smooth continuous scroll
 function continuousScroll() {
@@ -32,7 +32,7 @@ function continuousScroll() {
   carousel.style.transform = `translateX(${position}px)`; // Move the carousel to the left
 
   // When the scroll reaches the end of the images, reset
-  if (Math.abs(position) >= carousel.scrollWidth /4) {
+  if (Math.abs(position) >= carousel.scrollWidth /2) {
     position = 0; // Reset to the beginning for continuous scrolling
   }
 
