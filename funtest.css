@@ -69,12 +69,11 @@ nav a {
     overflow: hidden;
     margin-top: 0;
     z-index: -2;
-
   }
   
   .carousel {
     display: flex;
-    transition: transform 0.90s linear;
+    transition: transform 0.9s linear;
 
   }
 
