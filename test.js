@@ -18,7 +18,6 @@ const photoUrls = [
     'nour.jpeg','jazelle.jpg', 'lenacover.png',
    
     
-    
 ];
 
 // Function to display the photos
