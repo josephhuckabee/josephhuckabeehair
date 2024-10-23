@@ -1,265 +1,355 @@
-
-
-* {
-
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-   
-  }
   
   body {
-   margin: 0;
-   background-color: #01487e;
-  
-  }
-  
-  
-  h1{
-    font-family: "Protest Strike", sans-serif;
-    font-size: 36pt;
-  }
-  
-  header{
-    position: fixed;
-    display: flex;
-    justify-content: space-between; /* Align children */
-    align-items: center; 
-    width: 100%;
-    height: 100px;
     margin: 0;
-    padding-left: 20px;
-    background-color: #01487e;
+    color: #0d0d0c;
+   font-size: 18px;
+   display: grid;
+    grid-template-rows: auto auto;
+   grid-template-columns: 1fr 6fr;
    
-  }
-  .pageNav{
+   }
+   
+   
+   h1{
+     font-family: "Protest Strike", sans-serif;
+     font-size: 50pt;
+     text-align: center; /* Center the text */
+     color: #0d0d0c;
+   }
+
+   a{
+        text-decoration: none;
+        color: #0d0d0c;
+        background-color: none;
+    font-size: 20pt;
+   }
+
+   a:hover{
+    color: palevioletred;
+    font-size: 25pt;
+  
+   }
+
+   header{
+    grid-column: 1 / -1;
+    /* margin-top: 10px; */
+    /* margin: 0; */
+  
+   }
+
+
+   nav {
+    grid-row: 2;
+    display: flex; /* Use flexbox for nav items */
+margin-left: 10px;
+  
+}
+
+nav a {
+ 
+    text-decoration: none; /* Remove underline */
+    color: #0d0d0c;
     font-size: 14pt;
-    color: black;
-  
-  
-  }
-  
-  a{
-    text-decoration: none;
-    color: black;
-    padding:20px;
-    background-color: none;
-   
-  }
-  a:hover{
-    font-size: 18pt;
-  }
-  
-  
-  /* .hero{
-  display: flex;
-   padding-top: 150px;
-   margin: 0;
-   margin-left:80px;
-   margin-right:80px;
-  margin-bottom: 40px;
-  }
-  .hero img{
-    max-width: 200px;
-    border-style: solid;
-  } */
-  
 
- .book{
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-padding-top: 100px;
-margin-right: 10%;
+}
+  main{
+    max-width: 900px;
 
+   }
 
- }
-
-  
-  .pics{
-    display: flex;
-    padding-top: 100px;
-    margin: 0;
-    margin-left:80px;
-    margin-right:80px;
-   margin-bottom: 40px;
-  }
-  .carousel-container {
-    width: 300px; 
-    /* height: 300px; */
-    /* overflow: hidden; */
+   .carousel-container {
+    max-width: 900px; 
     position: relative;
+    overflow: hidden;
     margin-top: 0;
-    margin-bottom: 100px;
     z-index: -2;
   }
   
   .carousel {
     display: flex;
-    transition: transform 0.75s linear;
-   
-   
+    transition: transform 0.9s linear;
+    max-width: 900px; 
   }
+
+  
   
   .carousel img {
-    max-width: 350px; /* Image width */
-    height: 400px;
+    height: 800px;
     object-fit: cover;
+    margin-right: 10px;
   }
-  .price{
-    margin-left:  100px;
-    margin-right:  100px;
- 
-   
-  }
-  
-  .prices{
-  justify-content: center;
-  display: flex;
-  margin-bottom: 300px;
-  margin-left: 100px;
-  margin-right: 100px;
-  border-style: solid;
-  }
-  .priceChild{
-    display: flex;
-    padding: 20px;
-    
-  }
-  .consult{
-    margin-bottom: 20px;
-  
-  }
-  .contact{
-   max-width: 80%;
-    margin-left: 200px;
-    margin-right: 200px;
-    margin-bottom: 100px; 
-    display: flex;
-  }
-  
-  .contact img{
-    max-width: 300px;
-  }
-  .prices .refresh,
-  .prices .treatments,
-  .prices .transformations {
-  
-   
-    
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-    width: 33.33%;
-  }
-  
-  .biogg{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* padding: 20px; */
-    max-width: 60%;
-    margin: 0 auto;
 
-  }
-  .biogg img{
-    max-width: 200px;
-    padding: 10px;
-  }
   
-  .protest-strike-regular {
-    font-family: "Protest Strike", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  /* Modal backdrop */
-  .modal-backdrop {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    background-color: rgba(32, 57, 100, 0.80);
-    backdrop-filter: blur(50px);
-    opacity:1; 
-   
-  }
-  
-  /* Modal styles */
-  .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    backdrop-filter: blur(5px); /* Apply blur effect */
-  
-  
-  
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
-  }
-  
-  .modal-content {
-  
-  
-    background-color:rgba(255, 255, 255, 1);
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 25px;
-    /* border: 1px solid #888; */
-    width: 25%; /* Could be more or less, depending on screen size */
-    opacity: 1; /* Full opacity */
-    z-index: 1;
-  }
-  
-  .close-button {
-    color: #aaaaaa;
-    float: right;
-    font-size: 36px;
-    font-weight: bold;
-  }
-  
-  .close-button:hover,
-  .close-button:focus {
-    color: blue;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  #photo-gallery {
+#icon{
+    max-width: 35px;
+}
+#icon:hover{
+    max-width: 50px;
+}
+
+
+
+#photo-gallery {
     display: flex;
     flex-wrap: wrap;
-    /* margin: 10px auto; */
-    padding-top:100px;
-    /* width: 100%; */
     overflow-y: auto; /* Add vertical scrolling */
-
  max-height: 800px;
+ max-width: 900px;
+
 }
 
 #photo-gallery img {
-    /* margin: 0; auto; */
-    /* width: 50%; */
-    margin: 10px;
-    width:300px;
-    height: 375x;
-    
+   padding: 5px;
+    width: 275px;
     object-fit: cover;
-
-    /* aspect-ratio: 1/1;    /* margin-right: 22px; */
-    margin-bottom: 150px; */
-    /* border-radius: 8px; */
+   
 }
 
-#iconic {
- /* min-width: 50px; */
-  min-height: 50px; 
-  /* max-width: 50px; */
-  max-height: 50px;
+.prices {
+    display: grid;
+    grid-template-row: repeat(3, 1fr);
+    gap: 5px;
+    /* text-align: center; */
+    /* border-style: solid; */
 }
 
-#contactInfo {
-  display: flex;
+
+.prices div {
+  border-style: solid;
+}
+
+
+
+
+.contactContainer1{
+    display: flex;
+    /* margin-top: 50px; */
+    max-width: 800px;
+    background-color: #77bb79;
+    padding: 20px;
+    border-style: solid;
+}
+.contactContainer1 img{
+  max-height: 550px;
+
+    border-radius: 100pt;
+
+}
+.contactContainer2{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 100px;
+  padding: 10px;
+margin-top: 50px;
+ 
+  max-width: 750px;
+  background-color: #77bb79;
+
+}
+.contactContainer2 div{
+  border-style: solid;
+  background-color: #77bb79;
+
+}
+
+.bioblurb{
+min-height: 400px;
+
+}
+
+.main2{
+  max-height: 800px;
+  overflow: hidden;
+  overflow-y: auto; 
+}
+
+/* Media Queries  */
+
+/* Mobile styles (up to 600px) */
+@media only screen and (max-width: 600px) {
+  body {
+      font-size: 14px; /* Smaller font size for mobile */
+      margin: 0;
+      color: #0d0d0c;
+    }
+   
+    .carousel-container {
+      max-width: 300px; 
+      min-width: 300px; 
+      position: relative;
+      overflow: hidden;
+      margin-top: 0;
+      z-index: -2;
+    }
+    
+    .carousel {
+      display: flex;
+      transition: transform 0.9s linear;
+      max-width:300px; 
+    }
+  
+    
+.carousel img {
+max-width: 300px; 
+min-width: 300px;
+object-fit: cover;
+/* margin-right: 10px; */
+}
+
+#photo-gallery {
+display: flex;
+flex-wrap: wrap;
+overflow-y: auto; /* Add vertical scrolling */
+max-height: 600px;
+max-width: 300px;
+
+}
+
+#photo-gallery img {
+  max-width: 250px;
+  object-fit: cover;
  
 }
+
+.prices {
+max-width: 300px;
+}
+
+
+.prices div {
+border-style: solid;
+}
+
+
+
+
+.contactContainer1{
+  display: flex;
+  /* margin-top: 50px; */
+  max-width: 300px;
+  background-color: #77bb79;
+  /* padding: 20px; */
+  border-style: solid;
+}
+.contactContainer1 img{
+max-height: 400px;
+
+  border-radius: 100pt;
+
+}
+.contactContainer2{
+  max-width: 300px;
+background-color: #77bb79;
+
+}
+.contactContainer2 div{
+border-style: solid;
+background-color: #77bb79;
+
+}
+
+.bioblurb{
+min-height: 400px;
+
+}
+
+.main2{
+max-height: 400px;
+overflow: hidden;
+overflow-y: auto; 
+}
+
+/* Tablet styles (601px to 900px) */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  body {
+    font-size: 14px; /* Smaller font size for mobile */
+    margin: 0;
+    color: #0d0d0c;
+  }
+ 
+  .carousel-container {
+    max-width: 300px; 
+    position: relative;
+    overflow: hidden;
+    margin-top: 0;
+    z-index: -2;
+  }
+  
+  .carousel {
+    display: flex;
+    transition: transform 0.9s linear;
+    max-width:300px; 
+  }
+
+  
+  .carousel img {
+    height: 300px;
+    object-fit: cover;
+    /* margin-right: 10px; */
+  }
+
+#photo-gallery {
+display: flex;
+flex-wrap: wrap;
+overflow-y: auto; /* Add vertical scrolling */
+max-height: 400px;
+max-width: 300px;
+
+}
+
+#photo-gallery img {
+padding: 5px;
+width: 275px;
+object-fit: cover;
+
+}
+
+.prices {
+max-width: 300px;
+}
+
+
+.prices div {
+border-style: solid;
+}
+
+
+
+
+.contactContainer1{
+display: flex;
+/* margin-top: 50px; */
+max-width: 300px;
+background-color: #77bb79;
+/* padding: 20px; */
+border-style: solid;
+}
+.contactContainer1 img{
+max-height: 400px;
+
+border-radius: 100pt;
+
+}
+.contactContainer2{
+max-width: 300px;
+background-color: #77bb79;
+
+}
+.contactContainer2 div{
+border-style: solid;
+background-color: #77bb79;
+
+}
+
+.bioblurb{
+min-height: 400px;
+
+}
+
+.main2{
+max-height: 400px;
+overflow: hidden;
+overflow-y: auto; 
+}
+
+/* Desktop styles (901px and above) */
