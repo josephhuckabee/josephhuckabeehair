@@ -47,8 +47,8 @@ nav a {
   max-width: 1800px; /* Limits width on larger screens */
   position: relative;
   overflow: hidden;
- 
   margin: 20px;
+  max-width: 90vw; 
 }
 
 .carousel {
@@ -90,10 +90,26 @@ nav a {
   max-height: 300px;
   
 }
+
 #icon
 {
   max-width: 30px;
   height: auto;
+}
+
+.prices{
+
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+ align-items: center;
+ 
+}
+
+.prices div{
+  border-style: solid;
+  margin-bottom: 10%;
+  width: 80vw;
 }
 
 /* Media Queries for Responsive Design */
