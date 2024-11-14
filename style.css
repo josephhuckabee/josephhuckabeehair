@@ -111,12 +111,32 @@ nav a {
   margin-bottom: 10%;
   width: 80vw;
 }
-
 /* Media Queries for Responsive Design */
-@media (max-width: 748px) {
- 
+@media (max-width: 580px) {
+  h1 {
+    font-size:2em;
+  }
+  
+  #photo-gallery img {
+      width: 90%; /* Full-width images on smaller screens */
+  }
 
-
+  .carousel img {
+    max-width: 50%; /* Prevents the image from stretching beyond its container */
+    height: auto; /* Maintains image aspect ratio */
+    object-fit: cover; /* Keeps the entire image visible without cropping */
+  }
+  
+  .contact-container img {
+      width: 70%;
+  }
+}
+/* Media Queries for Responsive Design */
+@media (max-width: 760px) {
+  h1 {
+    font-size:3em;
+  }
+  
   #photo-gallery img {
       width: 90%; /* Full-width images on smaller screens */
   }
