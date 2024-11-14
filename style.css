@@ -136,7 +136,7 @@ nav a {
   }
 
   .carousel img {
-    max-width: 50%; /* Prevents the image from stretching beyond its container */
+    max-width: 65%; /* Prevents the image from stretching beyond its container */
     height: auto; /* Maintains image aspect ratio */
     object-fit: cover; /* Keeps the entire image visible without cropping */
   }
