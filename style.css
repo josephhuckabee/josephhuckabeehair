@@ -122,7 +122,7 @@ nav a {
   width: 80vw;
 }
 /* Media Queries for Responsive Design */
-@media (max-width: 580px) {
+@media (min-width: 620px) and(max-width: 748px) {
   h1 {
     font-size:2em;
   }
@@ -146,7 +146,7 @@ nav a {
   }
 }
 /* Media Queries for Responsive Design */
-@media (max-width: 760px) {
+@media (max-width: 748px) {
   h1 {
     font-size:3em;
   }
