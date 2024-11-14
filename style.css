@@ -1,6 +1,6 @@
 /* Reset basic styles */
 * {
-
+  margin-top: 0;
 }
 
 body {
@@ -13,24 +13,31 @@ body {
 
 /* Header */
 header {
-  width: 100%;
+  position: fixed;        /* Fixes the header to the top of the viewport */
+                 /* Aligns the header to the top */
+  left: 0;                /* Aligns the header to the left */
+  width: 100%;            /* Makes the header span the full width */
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+  color: white;
 
 }
+
 
 h1 {
-  font-size:3em;
+  font-size:8em;
+  background-color: black;
+  width: 100vw;
+
 }
 
-/* Navigation */
 nav {
+width: 100%;  /* Makes the header span the full width
 display: flex;
 flex-direction: row;
-align-items: center;
-
+/* align-items:center; */
+ background-color: white;
 
 }
 
@@ -38,17 +45,19 @@ nav a {
   text-decoration: none;
   color: black;
   padding: 20px;
+
 }
 
 
 
 /* Carousel Container */
 .carousel-container {
-  max-width: 1800px; /* Limits width on larger screens */
+   /* Limits width on larger screens */
   position: relative;
   overflow: hidden;
   margin: 20px;
   max-width: 90vw; 
+  margin-top: 25%;
 }
 
 .carousel {
@@ -57,7 +66,7 @@ nav a {
 }
 
 .carousel img {
-  max-width: 40%;    /* Adjusts for larger screens */
+  max-width: 50%;    /* Adjusts for larger screens */
   /* transition: max-width 0.3s ease-in-out; */
   padding: 10px;
 }
@@ -68,7 +77,7 @@ nav a {
   flex-wrap: wrap;
   justify-content: center;
   max-width: 90vw;
-  margin-top: 20px;
+  margin-top: 30%;
 }
 
 #photo-gallery img {
@@ -83,6 +92,7 @@ nav a {
 .contactContainer1{
   width: 80vw;
   text-align: center;
+  margin-top: 30%;
 }
 
 .contactContainer1 img {
