@@ -131,6 +131,10 @@ nav a {
       width: 90%; /* Full-width images on smaller screens */
   }
 
+  .carousel-container{
+    margin-top: 20%;
+  }
+
   .carousel img {
     max-width: 50%; /* Prevents the image from stretching beyond its container */
     height: auto; /* Maintains image aspect ratio */
