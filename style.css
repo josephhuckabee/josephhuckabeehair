@@ -126,12 +126,12 @@ margin-right: 20px;
   }
 
   .carousel-container {
-    margin-top: 60%;
+    margin-top: 100%;
   }
 
   .carousel img {
     width: 100%; /* Full width of the container */
-    height: 300px; /* Adjust height for smaller screens */
+    height: 800px; /* Adjust height for smaller screens */
     object-fit: cover;
   }
 }
@@ -139,7 +139,7 @@ margin-right: 20px;
 @media (min-width: 748px) and (max-width: 900px) {
   .carousel img {
     width: 100%;  /* Full width of the container */
-    height: 300px; /* Adjust height for medium-sized screens */
+    height: 800px; /* Adjust height for medium-sized screens */
     object-fit: cover;
   }
 }
@@ -147,7 +147,7 @@ margin-right: 20px;
 @media (min-width: 900px) and (max-width: 2800px) {
   .carousel img {
     width: 100%; /* Full width of the container */
-    height: 400px; /* Adjust height for larger screens */
+    height: 800px; /* Adjust height for larger screens */
     object-fit: cover;
   }
 }
