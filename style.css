@@ -8,11 +8,9 @@
 body {
   font-family: Arial, sans-serif;
   color: #0d0d0c;
-  background-color: #f9f9f9;
+  background-color: white;
 }
-.serv_charge{
-  margin-top: 100px;
-}
+
 /* Header */
 header {
   position: fixed; /* Fixes the header to the top of the viewport */
@@ -45,7 +43,7 @@ nav {
 a {
   text-decoration: none;
   color: black;
-  padding: 20px;
+  padding: 25px;
 }
 
 /* Carousel Container */
@@ -76,7 +74,8 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 120px;
+  margin-top: 100px;
+  height: 100vh;
  
 }
 
@@ -112,12 +111,12 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 120px;
 }
 
 .prices div {
   border-style: solid;
-  margin-bottom: 10%;
+  margin-bottom:5%;
   width: 80vw;
 }
 
@@ -148,6 +147,9 @@ a {
   .carousel img {
     height: 80vh;  /* Set a height that scales based on the viewport */
   }
+  main {
+    margin-top: 20px;  /* Adjust main margin for very large screens */
+  }
 }
 
 /* Medium Screens (Tablets and Small Desktops) */
@@ -173,12 +175,15 @@ a {
   .contactContainer1 {
     flex-direction: column;
   }
+  main {
+    margin-top: 40px;  /* Adjust main margin for very large screens */
+  }
 }
 
 /* Larger Tablets and Small Desktop Screens */
 @media (min-width: 900px) and (max-width: 1199px) {
   h1 {
-    font-size: 3em;
+    font-size: 6em;
   }
 
   .carousel img {
@@ -196,16 +201,19 @@ a {
   .prices {
     margin-top: 10px;
   }
+  main {
+    margin-top: 60px;  /* Adjust main margin for very large screens */
+  }
 }
 
 /* Desktop and Larger Screens */
 @media (min-width: 1200px) {
   h1 {
-    font-size: 4em;
+    font-size: 8em;
   }
 
   .carousel img {
-    height: 50vh; /* Larger images for large screens */
+    height: 80vh; /* Larger images for large screens */
   }
 
   #photo-gallery img {
@@ -221,6 +229,6 @@ a {
   }
 
   main {
-    margin-top: 180px;  /* Adjust main margin for very large screens */
+    margin-top: 100px;  /* Adjust main margin for very large screens */
   }
 }
