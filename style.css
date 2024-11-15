@@ -139,7 +139,8 @@ a {
   h1 {
     font-size: 2.5em;
   }
-
+  nav{
+    padding: 25px;}
   #photo-gallery img {
     width: 100%; /* Three images per row */
   }
