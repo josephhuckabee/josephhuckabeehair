@@ -42,12 +42,14 @@ nav {
   background-color: white;
   padding-top: 10px; 
   text-align: center;
+  font-size:1.25em;
 }
 
 a {
   text-decoration: none;
   color: black;
   padding: 25px;
+
 }
 
 /* Carousel Container */
@@ -103,7 +105,7 @@ a {
 }
 
 .contactContainer1 img {
-  max-height: 300px;
+  max-height: 500px;
 }
 .blue img{
   border-style: solid;
@@ -157,7 +159,7 @@ a {
 /* Media Queries for Responsive Design */
 
 /* Small Screens */
-@media (max-width: 619px) {
+@media (min-width: 100px) and (max-width:628px){
   h1 {
     font-size: 2.5em;
   }
@@ -167,22 +169,46 @@ a {
   }
 
   .carousel img {
-    height: 80vh;  /* Set a height that scales based on the viewport */
+    height: 70vh;  /* Set a height that scales based on the viewport */
   }
-  main {
-    margin-top: 20px;  /* Adjust main margin for very large screens */
+
+  .contactContainer1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+
+ }
+
+.contact_icons {
+  display: flex;
+ flex-direction: row;
+ align-items: baseline;
+
+}
+  nav a{
+   padding:10px;
   }
-  nav{
-   padding:1px;
+  .contactContainer1 img {
+    max-height:400px;
+  
   }
+
+
+
+
 }
 
 /* Medium Screens (Tablets and Small Desktops) */
-@media (min-width: 620px) and (max-width: 899px) {
+@media (min-width: 628px) and (max-width: 899px) {
   h1 {
-    font-size: 2.5em;
+    font-size: 3.5em;
   }
-
+  .contactContainer1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .carousel {
     margin-top: 100px;
   }
@@ -198,7 +224,9 @@ a {
   }
 
   .contactContainer1 {
+    display: flex;
     flex-direction: column;
+    align-items: center;
   }
   main {
     margin-top: 40px;  /* Adjust main margin for very large screens */
