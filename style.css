@@ -63,10 +63,11 @@ main {
   justify-content: space-between; /* Space images evenly */
   align-items: stretch;  /* Ensures images stretch to the same height */
   transition: max-width 0.3s ease-in-out;
+  margin-top: 100px;
 }
 
 .carousel img {
-  width: 60%;  /* Images scale with container width */
+  width: 60%;  
   height: 50%px; /* Adjust height for mobile */
   object-fit: cover; /* Ensures images fill the container without distortion */
   margin-bottom: 10px;
@@ -78,7 +79,7 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   max-width: 90vw;
-  margin-top: 100px;
+  margin-top: 10%;
 }
 
 #photo-gallery img {
@@ -132,14 +133,35 @@ flex-direction: row;
 
 }
 
-/* Media Queries for Larger Screens */
+
 
 /* Tablets and Medium Screens */
-@media (max-width: 620px) {
+@media (min-width: 200px) and (max-width: 500px) {
   h1 {
     font-size: 2.5em;
   }
 
+  .carousel-container {
+    margin-top: 100px;
+  }
+
+  .carousel img {
+    height: auto;
+    width: 100px; /* Increase height for tablets */
+  }
+
+  #photo-gallery img {
+    width: 90%; /* Two images per row */
+  }
+
+  main {
+   /* Adjust main margin for larger screens */
+  }
+}
+@media (min-width: 481px) and (max-width:620px){
+  h1 {
+    font-size: 3em;
+  }
   .carousel-container {
     margin-top: 100px;
   }
@@ -150,23 +172,24 @@ flex-direction: row;
   }
 
   #photo-gallery img {
-    width: 45%; /* Two images per row */
+    width: 40%; /* Two images per row */
   }
 
   main {
    /* Adjust main margin for larger screens */
   }
 }
-
 /* Larger Tablets and Small Desktop Screens */
-@media (min-width: 900px) {
+@media (min-width: 621px) and (max-width:900px){
   h1 {
     font-size: 3em;
   }
 
   .carousel img {
-    height: 500px; /* Increase height for larger tablets and small desktops */
- }
+    height: 900px; /* Increase height for larger tablets and small desktops */
+    width: auto;
+    margin-top: 20px;
+  }
 
   #photo-gallery img {
     width: 30%; /* Three images per row */
@@ -185,8 +208,9 @@ flex-direction: row;
   }
 }
 
+
 /* Desktop and Larger Screens */
-@media (min-width: 1200px) {
+@media (min-width: 901px) {
   h1 {
     font-size: 4em;
   }
