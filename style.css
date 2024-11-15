@@ -218,8 +218,11 @@ flex-direction: row;
   .carousel img {
     height: 600px; /* Larger images for large screens */
   }
-
+#photo-gallery{
+  margin-top: 12%;
+}
   #photo-gallery img {
+   
     width: 25%; /* Four images per row */
   }
 
