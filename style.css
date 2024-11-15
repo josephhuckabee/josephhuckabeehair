@@ -8,9 +8,7 @@
 body {
   font-family: Arial, sans-serif;
   color: #0d0d0c;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-color: #f9f9f9;
 }
 
 /* Header */
@@ -24,21 +22,22 @@ header {
   align-items: center;
   color: white;
   z-index: 1000;  /* Ensures the header is on top of other content */
+  background-color: black;
 }
 
 h1 {
   font-size: 2em;
-  background-color: black;
   width: 100vw;
   padding: 10px;
+  text-align: center;
+  color: white;
 }
 
 nav {
   width: 100%;
   background-color: white;
   padding-top: 10px; 
-
-   /* Adds extra space at the top of the navigation */
+  text-align: center;
 }
 
 a {
@@ -51,32 +50,32 @@ a {
 .carousel-container {
   position: relative;
   overflow: hidden;
-  margin-top: 10px;
-  
+  width: 100%;
+  height: 100vh; /* Ensures full viewport height */
 }
 
 .carousel {
   display: flex;
-  justify-content: space-between; /* Space images evenly */
-  align-items: stretch;  /* Ensures images stretch to the same height */
-  transition: max-width 0.3s ease-in-out;
-  margin-top: 10px;
+  justify-content: center; /* Center images horizontally */
+  align-items: center; /* Align images vertically */
+  height: 100%; /* Ensures carousel takes full height */
+  transition: transform 0.3s ease-in-out;
 }
 
 .carousel img {
-  width: 60%;  /* Images scale with container width */
-  height: 50%px; /* Adjust height for mobile */
-  object-fit: cover; /* Ensures images fill the container without distortion */
-  margin-bottom: 10px;
+  height: 100%;  /* Ensures all images take the full height of the container */
+  width: auto;  /* Ensures aspect ratio is preserved */
+  object-fit: contain; /* Ensures no cropping, image is fully visible */
+  display: block;
 }
 
-/* Gallery Section */
+/* Photo Gallery Section */
 #photo-gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 90vw;
-  margin-top: 100px;
+  margin-top: 120px;
+ 
 }
 
 #photo-gallery img {
@@ -89,10 +88,12 @@ a {
 .contactContainer1 {
   width: 80vw;
   text-align: center;
-margin-top: 100px;
-padding: 60px;
-display: flex;
-flex-direction: row;
+  margin-top: 100px;
+  padding: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .contactContainer1 img {
@@ -117,69 +118,71 @@ flex-direction: row;
   margin-bottom: 10%;
   width: 80vw;
 }
-.contact_icons{
+
+.contact_icons {
   display: grid;
   grid-template-rows: repeat(2, 1fr); /* 2 rows with equal height */
   grid-template-columns: repeat(2, 1fr); /* 2 columns with equal width */
- border-style: solid;
-
+  border-style: solid;
 }
-.contact_icons img{
+
+.contact_icons img {
   max-width: 50px;
   max-height: 50px;
-
 }
 
-/* Media Queries for Larger Screens */
+/* Media Queries for Responsive Design */
 
-/* Tablets and Medium Screens */
-@media (max-width: 620px) {
+/* Small Screens */
+@media (max-width: 619px) {
   h1 {
     font-size: 2.5em;
   }
 
-  .carousel-container {
-    margin-top: 100px;
+  #photo-gallery img {
+    width: 100%; /* Three images per row */
   }
-  .carousel {
-    display: flex;
-    justify-content: space-between; /* Space images evenly */
-    align-items: stretch;  /* Ensures images stretch to the same height */
-    transition: max-width 0.3s ease-in-out;
-    margin-top: 100px;
-  }
+
   .carousel img {
-    height: 600px;
-    width: 620px; /* Increase height for tablets */
+    height: 80vh;  /* Set a height that scales based on the viewport */
+  }
+}
+
+/* Medium Screens (Tablets and Small Desktops) */
+@media (min-width: 620px) and (max-width: 899px) {
+  h1 {
+    font-size: 2.5em;
+  }
+
+  .carousel {
+    margin-top: 100px;
+  }
+
+  .carousel img {
+    height: 75vh; /* Adjust height for tablets */
   }
 
   #photo-gallery img {
-    width: 45%; /* Two images per row */
+    width: 48%; /* Two images per row */
   }
 
-  main {
-   /* Adjust main margin for larger screens */
+  .contactContainer1 {
+    flex-direction: column;
   }
 }
 
 /* Larger Tablets and Small Desktop Screens */
-@media (min-width: 900px) {
+@media (min-width: 900px) and (max-width: 1199px) {
   h1 {
     font-size: 3em;
   }
-  .carousel {
-    display: flex;
-    justify-content: space-between; /* Space images evenly */
-    align-items: stretch;  /* Ensures images stretch to the same height */
-    transition: max-width 0.3s ease-in-out;
-    margin-top: 100px;
-  }
+
   .carousel img {
-    height: 500px; /* Increase height for larger tablets and small desktops */
- }
+    height: 60vh; /* Adjust image height for larger tablets */
+  }
 
   #photo-gallery img {
-    width: 30%; /* Three images per row */
+    width: 33.33%; /* Three images per row */
   }
 
   .contactContainer1 {
@@ -189,8 +192,6 @@ flex-direction: row;
   .prices {
     margin-top: 100px;
   }
-
- 
 }
 
 /* Desktop and Larger Screens */
@@ -198,15 +199,9 @@ flex-direction: row;
   h1 {
     font-size: 4em;
   }
-  .carousel {
-    display: flex;
-    justify-content: space-between; /* Space images evenly */
-    align-items: stretch;  /* Ensures images stretch to the same height */
-    transition: max-width 0.3s ease-in-out;
-    margin-top: 100px;
-  }
+
   .carousel img {
-    height: 600px; /* Larger images for large screens */
+    height: 50vh; /* Larger images for large screens */
   }
 
   #photo-gallery img {
