@@ -115,20 +115,13 @@ a {
   max-width: 30px;
   height: auto;
 }
-#book{
-  background-color: #bbccad;
-  max-width: 175px;
-  min-height: 30px;
-  border-radius: 25px;
-  padding: 10px;
 
-}
 .prices {
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 120px;
+
 }
 
 
@@ -136,14 +129,11 @@ a {
   border-style: solid;
   margin-bottom:5%;
   width: 80vw;
-  background-color: #abd4f7;
+
 }
 
 .contact_icons {
-  display: grid;
-  grid-template-rows: repeat(2, 1fr); /* 2 rows with equal height */
-  grid-template-columns: repeat(2, 1fr); /* 2 columns with equal width */
- 
+  margin-top: 100px;
 
 }
 
@@ -165,13 +155,13 @@ a {
     font-size: 1.5em;
   }
 p{
-  font-size: 16px;
+  font-size: 20px;
 }
   #photo-gallery img {
     width: 100%; /* Three images per row */
   }
 .carousel-container{
-  margin-top: 25px;
+  margin-top: 10px;
 }
   .carousel img {
     height: 80vh;  /* Set a height that scales based on the viewport */
@@ -189,6 +179,7 @@ p{
   display: flex;
  flex-direction: row;
  align-items: baseline;
+ 
 }
   nav a{
    padding:10px;
@@ -198,7 +189,11 @@ p{
   
   }
 
-
+#priceyy{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 
 }
