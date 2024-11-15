@@ -1,6 +1,8 @@
 /* Reset basic styles */
 * {
-  margin-top: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;  /* Prevents padding/margin from affecting layout */
 }
 
 body {
@@ -13,63 +15,58 @@ body {
 
 /* Header */
 header {
-  position: fixed;        /* Fixes the header to the top of the viewport */
-                 /* Aligns the header to the top */
-  left: 0;                /* Aligns the header to the left */
-  width: 100%;            /* Makes the header span the full width */
+  position: fixed; /* Fixes the header to the top of the viewport */
+  top: 0; /* Aligns the header to the top */
+  left: 0; /* Aligns the header to the left */
+  width: 100%; /* Makes the header span the full width */
   display: flex;
   flex-direction: column;
   align-items: center;
   color: white;
-
+  z-index: 1000;  /* Ensures the header is on top of other content */
 }
 
-
 h1 {
-  font-size:3em;
+  font-size: 3em;
   background-color: black;
   width: 100vw;
   padding: 10px;
-
 }
 
 nav {
-width: 100%;  /* Makes the header span the full width
-display: flex;
-flex-direction: row;
-/* align-items:center; */
- background-color: white;
-
+  width: 100%;
+  background-color: white;
+ 
 }
 
 nav a {
   text-decoration: none;
   color: black;
   padding: 20px;
-
 }
-
-
-
+main{
+  margin-top: 100px;
+}
 /* Carousel Container */
 .carousel-container {
-   /* Limits width on larger screens */
   position: relative;
   overflow: hidden;
-  margin: 20px;
-  max-width: 90vw; 
-  margin-top: 25%;
+
+
 }
 
 .carousel {
   display: flex;
+  justify-content: space-between; /* Space images evenly */
+  align-items: stretch;  /* Ensures images stretch to the same height */
   transition: max-width 0.3s ease-in-out;
 }
 
 .carousel img {
-  max-width: 50%;    /* Adjusts for larger screens */
-  /* transition: max-width 0.3s ease-in-out; */
-  padding: 10px;
+  width: 60%; /* Makes the image scale with container width */
+  height: 600px; /* Ensures image grows in height with the container */
+  object-fit: cover; /* Ensures images fill the container without distortion */
+margin-right: 20px;
 }
 
 /* Gallery Section */
@@ -78,111 +75,87 @@ nav a {
   flex-wrap: wrap;
   justify-content: center;
   max-width: 90vw;
-  margin-top: 30%;
+  margin-top: 100px;
+
 }
 
 #photo-gallery img {
-  width: 45%; /* Two images per row */
+  width: 45%;  /* Two images per row */
   margin: 1%;
   object-fit: cover;
-  
 }
 
-
-
-.contactContainer1{
+/* Contact Section */
+.contactContainer1 {
   width: 80vw;
   text-align: center;
   margin-top: 30%;
 }
 
 .contactContainer1 img {
-  /* width: 1%; */
   max-height: 300px;
-  
 }
 
-#icon
-{
+#icon {
   max-width: 30px;
   height: auto;
 }
 
-.prices{
-
+.prices {
   text-align: center;
   display: flex;
   flex-direction: column;
- align-items: center;
- 
+  align-items: center;
+  margin-top: 100px;
 }
 
-.prices div{
+.prices div {
   border-style: solid;
   margin-bottom: 10%;
   width: 80vw;
 }
+
 /* Media Queries for Responsive Design */
-@media (min-width: 620px) and(max-width: 748px) {
+@media (min-width: 620px) and (max-width: 748px) {
   h1 {
-    font-size:2em;
+    font-size: 2em;
   }
   
   #photo-gallery img {
-      width: 90%; /* Full-width images on smaller screens */
+    width: 90%;  /* Full-width images on smaller screens */
   }
 
-  .carousel-container{
+  .carousel-container {
     margin-top: 60%;
   }
 
   .carousel img {
-    max-width: 65%; /* Prevents the image from stretching beyond its container */
-    height: auto; /* Maintains image aspect ratio */
-    object-fit: cover; /* Keeps the entire image visible without cropping */
-  }
-  
-  .contact-container img {
-      width: 70%;
+    width: 100%; /* Full width of the container */
+    height: 300px; /* Adjust height for smaller screens */
+    object-fit: cover;
   }
 }
 
-  .contact-container img {
-      width: 70%;
-  }
-
-
 @media (min-width: 748px) and (max-width: 900px) {
   .carousel img {
-    max-width: 40%; /* Prevents the image from stretching beyond its container */
-    height: auto; /* Maintains image aspect ratio */
-    object-fit: cover; /* Keeps the entire image visible without cropping */
-  }
-  
-  .contact-container img {
-      width: 70%;
+    width: 100%;  /* Full width of the container */
+    height: 300px; /* Adjust height for medium-sized screens */
+    object-fit: cover;
   }
 }
 
 @media (min-width: 900px) and (max-width: 2800px) {
   .carousel img {
-    max-width:30%; /* Prevents the image from stretching beyond its container */
-    max-height: 80%; /* Maintains image aspect ratio */
-    object-fit: cover; /* Keeps the entire image visible without cropping */
+    width: 100%; /* Full width of the container */
+    height: 400px; /* Adjust height for larger screens */
+    object-fit: cover;
   }
-  
-  .contact-container img {
-      width: 40%;
-  }}
+}
 
-  @media (min-width: 2800px) and (max-width: 3600px) {
-    .carousel img {
-      max-width:40%; /* Prevents the image from stretching beyond its container */
-      max-height: 30%; /* Maintains image aspect ratio */
-      object-fit: cover; /* Keeps the entire image visible without cropping */
-    }
-    
-    .contact-container img {
-        width: 70%;
-    }}
-
+@media (min-width: 2800px) and (max-width: 3600px) {
+  .carousel img {
+    width: 100%; /* Full width of the container */
+    height: 800px; /* Adjust height for very large screens */
+    object-fit: cover;
+  }
+}
