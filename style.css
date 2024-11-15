@@ -132,7 +132,7 @@ flex-direction: row;
   }
 
   .carousel img {
-    height: 400px; /* Increase height for tablets */
+    height: 600px; /* Increase height for tablets */
   }
 
   #photo-gallery img {
