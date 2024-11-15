@@ -172,6 +172,9 @@ a {
   main {
     margin-top: 20px;  /* Adjust main margin for very large screens */
   }
+  nav{
+    padding:10px;
+  }
 }
 
 /* Medium Screens (Tablets and Small Desktops) */
