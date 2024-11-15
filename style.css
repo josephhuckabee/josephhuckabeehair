@@ -4,6 +4,10 @@
   padding: 0;
   box-sizing: border-box;  /* Prevents padding/margin from affecting layout */
 }
+.headshot{
+  border-style: solid;
+  border-radius: 25px;
+}
 
 body {
   font-family: Arial, sans-serif;
@@ -90,7 +94,8 @@ a {
   width: 80vw;
   text-align: center;
   margin-top: 100px;
-  padding: 60px;
+  margin-left: 50px;
+  gap:50px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -100,12 +105,21 @@ a {
 .contactContainer1 img {
   max-height: 300px;
 }
-
+.blue img{
+  border-style: solid;
+}
 #icon {
   max-width: 30px;
   height: auto;
 }
+#book{
+  background-color: #bbccad;
+  max-width: 175px;
+  min-height: 30px;
+  border-radius: 25px;
+  padding: 10px;
 
+}
 .prices {
   text-align: center;
   display: flex;
@@ -114,22 +128,30 @@ a {
   margin-top: 120px;
 }
 
+
 .prices div {
   border-style: solid;
   margin-bottom:5%;
   width: 80vw;
+  background-color: #abd4f7;
 }
 
 .contact_icons {
   display: grid;
   grid-template-rows: repeat(2, 1fr); /* 2 rows with equal height */
   grid-template-columns: repeat(2, 1fr); /* 2 columns with equal width */
-  border-style: solid;
+ 
+
 }
 
 .contact_icons img {
   max-width: 50px;
   max-height: 50px;
+}
+.contact{
+    padding:35px;
+    background-color: black;
+    color: white;
 }
 
 /* Media Queries for Responsive Design */
@@ -139,8 +161,7 @@ a {
   h1 {
     font-size: 2.5em;
   }
-  nav{
-    padding: 25px;}
+
   #photo-gallery img {
     width: 100%; /* Three images per row */
   }
