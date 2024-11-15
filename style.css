@@ -165,7 +165,7 @@ a {
 /* Small Screens */
 @media (min-width: 100px) and (max-width:628px){
   h1 {
-    font-size: 2.3em;
+    font-size: 2em;
   }
 
   #photo-gallery img {
@@ -173,7 +173,7 @@ a {
   }
 
   .carousel img {
-    height: 80vh;  /* Set a height that scales based on the viewport */
+    height: 75vh;  /* Set a height that scales based on the viewport */
   }
 
   .contactContainer1{
