@@ -2,7 +2,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;  /* Prevents padding/margin from affecting layout */
+  box-sizing: border-box; /* Prevents padding/margin from affecting layout */
 }
 
 body {
@@ -11,65 +11,62 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 100px; /* Adjust to prevent content from hiding behind fixed header */
 }
 
 /* Header */
 header {
-  position: fixed; /* Fixes the header to the top of the viewport */
-  top: 0; /* Aligns the header to the top */
-  left: 0; /* Aligns the header to the left */
-  width: 100%; /* Makes the header span the full width */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: white;
-  z-index: 1000;  /* Ensures the header is on top of other content */
+  background-color: black;
+  z-index: 1000;
 }
 
 h1 {
   font-size: 2em;
-  background-color: black;
-  width: 100vw;
+  width: 100%;
   padding: 10px;
+  text-align: center;
 }
 
 nav {
   width: 100%;
   background-color: white;
-  padding-top: 10px; 
-
-   /* Adds extra space at the top of the navigation */
+  padding: 10px 0;
+  text-align: center;
 }
 
 a {
   text-decoration: none;
   color: black;
-  padding: 20px;
-}
-
-/* Main Content */
-main {
-/* Add top margin to ensure header doesn't overlap */
+  padding: 10px;
+  display: inline-block;
 }
 
 /* Carousel Container */
 .carousel-container {
   position: relative;
   overflow: hidden;
+  width: 100%;
 }
 
 .carousel {
   display: flex;
-  justify-content: space-between; /* Space images evenly */
-  align-items: stretch;  /* Ensures images stretch to the same height */
-  transition: max-width 0.3s ease-in-out;
-  margin-top: 100px;
+  justify-content: space-between;
+  align-items: stretch;
+  transition: transform 0.3s ease-in-out;
 }
 
 .carousel img {
-  width: 60%;  
-  height: 50%px; /* Adjust height for mobile */
-  object-fit: cover; /* Ensures images fill the container without distortion */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
   margin-bottom: 10px;
 }
 
@@ -78,35 +75,42 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 90vw;
-  margin-top: 10%;
+  width: 100%;
+  margin-top: 20px;
 }
 
 #photo-gallery img {
-  width: 100%;  /* Full-width images on smaller screens */
+  width: 100%; /* Full-width images on smaller screens */
   margin: 5px;
   object-fit: cover;
 }
 
 /* Contact Section */
 .contactContainer1 {
+  display: flex;
+  justify-content: space-between;
   width: 80vw;
   text-align: center;
-margin-top: 100px;
-padding: 60px;
-display: flex;
-flex-direction: row;
+  margin-top: 100px;
+  padding: 20px;
 }
 
 .contactContainer1 img {
   max-height: 300px;
 }
 
-#icon {
-  max-width: 30px;
-  height: auto;
+.contact_icons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
 }
 
+.contact_icons img {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+/* Prices Section */
 .prices {
   text-align: center;
   display: flex;
@@ -118,87 +122,43 @@ flex-direction: row;
 .prices div {
   border-style: solid;
   margin-bottom: 10%;
-  width: 80vw;
-}
-.contact_icons{
-  display: grid;
-  grid-template-rows: repeat(2, 1fr); /* 2 rows with equal height */
-  grid-template-columns: repeat(2, 1fr); /* 2 columns with equal width */
- border-style: solid;
-
-}
-.contact_icons img{
-  max-width: 50px;
-  max-height: 50px;
-
+  width: 80%;
 }
 
-
+/* Mobile First: Default Styles for Smaller Screens */
 
 /* Tablets and Medium Screens */
-@media (min-width: 200px) and (max-width: 500px) {
+@media (min-width: 480px) {
   h1 {
     font-size: 2.5em;
   }
 
-  .carousel-container {
-    margin-top: 100px;
-  }
-
   .carousel img {
-    height: auto;
-    width: 100px; /* Increase height for tablets */
+    width: 100%;
   }
-#photo-gallery{
-  margin-top: 20%;
-}
+
+  #photo-gallery {
+    margin-top: 10%;
+  }
+
   #photo-gallery img {
-    width: 100%; /* Two images per row */
-  }
-
-  main {
-   /* Adjust main margin for larger screens */
+    width: 50%; /* Two images per row on tablets */
   }
 }
-@media (min-width: 481px) and (max-width:620px){
-  h1 {
-    font-size: 3em;
-  }
-  .carousel-container {
-    margin-top: 100px;
-  }
 
-  .carousel img {
-    height: 600px;
-    width: 620px; /* Increase height for tablets */
-  }
-  #photo-gallery{
-    margin-top: 20%;
-  }
-  #photo-gallery img {
-    width: 40%; /* Two images per row */
-  }
-
-  main {
-   /* Adjust main margin for larger screens */
-  }
-}
 /* Larger Tablets and Small Desktop Screens */
-@media (min-width: 621px) and (max-width:900px){
+@media (min-width: 621px) {
   h1 {
     font-size: 3em;
   }
 
   .carousel img {
-    height: 900px; /* Increase height for larger tablets and small desktops */
+    height: 90%; /* Larger images for larger tablets */
     width: auto;
-    margin-top: 20px;
   }
-  #photo-gallery{
-    margin-top: 20%;
-  }
+
   #photo-gallery img {
-    width: 30%; /* Three images per row */
+    width: 33.33%; /* Three images per row */
   }
 
   .contactContainer1 {
@@ -208,12 +168,7 @@ flex-direction: row;
   .prices {
     margin-top: 100px;
   }
-
-  main {
-;  /* Adjust main margin for larger screens */
-  }
 }
-
 
 /* Desktop and Larger Screens */
 @media (min-width: 901px) {
@@ -222,14 +177,15 @@ flex-direction: row;
   }
 
   .carousel img {
-    height: 1000px; /* Larger images for large screens */
+    height: 600px; /* Larger images for large screens */
   }
-#photo-gallery{
-  margin-top: 12%;
-}
+
+  #photo-gallery {
+    margin-top: 12%;
+  }
+
   #photo-gallery img {
-   
-    width: 25%; /* Four images per row */
+    width: 25%; /* Four images per row on large screens */
   }
 
   .contactContainer1 {
