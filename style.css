@@ -150,7 +150,7 @@ flex-direction: row;
     width: 100px; /* Increase height for tablets */
   }
 #photo-gallery{
-  margin-top: 10%;
+  margin-top: 20%;
 }
   #photo-gallery img {
     width: 100%; /* Two images per row */
@@ -172,7 +172,9 @@ flex-direction: row;
     height: 600px;
     width: 620px; /* Increase height for tablets */
   }
-
+  #photo-gallery{
+    margin-top: 20%;
+  }
   #photo-gallery img {
     width: 40%; /* Two images per row */
   }
@@ -192,7 +194,9 @@ flex-direction: row;
     width: auto;
     margin-top: 20px;
   }
-
+  #photo-gallery{
+    margin-top: 20%;
+  }
   #photo-gallery img {
     width: 30%; /* Three images per row */
   }
