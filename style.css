@@ -10,7 +10,9 @@ body {
   color: #0d0d0c;
   background-color: #f9f9f9;
 }
-
+.serv_charge{
+  margin-top: 100px;
+}
 /* Header */
 header {
   position: fixed; /* Fixes the header to the top of the viewport */
@@ -161,7 +163,9 @@ a {
   .carousel img {
     height: 75vh; /* Adjust height for tablets */
   }
-
+.prices{
+  margin-top: 10px;
+}
   #photo-gallery img {
     width: 48%; /* Two images per row */
   }
@@ -190,7 +194,7 @@ a {
   }
 
   .prices {
-    margin-top: 100px;
+    margin-top: 10px;
   }
 }
 
@@ -213,7 +217,7 @@ a {
   }
 
   .prices {
-    margin-top: 100px;
+    margin-top: 10px;
   }
 
   main {
