@@ -149,7 +149,9 @@ flex-direction: row;
     height: auto;
     width: 100px; /* Increase height for tablets */
   }
-
+#photo-gallery{
+  margin-top: 10%;
+}
   #photo-gallery img {
     width: 100%; /* Two images per row */
   }
