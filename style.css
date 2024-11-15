@@ -151,7 +151,7 @@ flex-direction: row;
   }
 
   #photo-gallery img {
-    width: 90%; /* Two images per row */
+    width: 100%; /* Two images per row */
   }
 
   main {
