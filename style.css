@@ -172,7 +172,7 @@ a {
   margin-top: 25px;
 }
   .carousel img {
-    height: 90vh;  /* Set a height that scales based on the viewport */
+    height: 80vh;  /* Set a height that scales based on the viewport */
   }
 
   .contactContainer1{
