@@ -47,15 +47,12 @@ a {
   padding: 20px;
 }
 
-/* Main Content */
-main {
-/* Add top margin to ensure header doesn't overlap */
-}
-
 /* Carousel Container */
 .carousel-container {
   position: relative;
   overflow: hidden;
+  margin-top: 10px;
+  
 }
 
 .carousel {
@@ -63,11 +60,11 @@ main {
   justify-content: space-between; /* Space images evenly */
   align-items: stretch;  /* Ensures images stretch to the same height */
   transition: max-width 0.3s ease-in-out;
-  margin-top: 100px;
+  margin-top: 10px;
 }
 
 .carousel img {
-  width: 60%;  
+  width: 60%;  /* Images scale with container width */
   height: 50%px; /* Adjust height for mobile */
   object-fit: cover; /* Ensures images fill the container without distortion */
   margin-bottom: 10px;
@@ -79,7 +76,7 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   max-width: 90vw;
-  margin-top: 10%;
+  margin-top: 100px;
 }
 
 #photo-gallery img {
@@ -133,10 +130,10 @@ flex-direction: row;
 
 }
 
-
+/* Media Queries for Larger Screens */
 
 /* Tablets and Medium Screens */
-@media (min-width: 200px) and (max-width: 500px) {
+@media (max-width: 620px) {
   h1 {
     font-size: 2.5em;
   }
@@ -144,52 +141,42 @@ flex-direction: row;
   .carousel-container {
     margin-top: 100px;
   }
-
-  .carousel img {
-    height: auto;
-    width: 100px; /* Increase height for tablets */
-  }
-
-  #photo-gallery img {
-    width: 90%; /* Two images per row */
-  }
-
-  main {
-   /* Adjust main margin for larger screens */
-  }
-}
-@media (min-width: 481px) and (max-width:620px){
-  h1 {
-    font-size: 3em;
-  }
-  .carousel-container {
+  .carousel {
+    display: flex;
+    justify-content: space-between; /* Space images evenly */
+    align-items: stretch;  /* Ensures images stretch to the same height */
+    transition: max-width 0.3s ease-in-out;
     margin-top: 100px;
   }
-
   .carousel img {
     height: 600px;
     width: 620px; /* Increase height for tablets */
   }
 
   #photo-gallery img {
-    width: 40%; /* Two images per row */
+    width: 45%; /* Two images per row */
   }
 
   main {
    /* Adjust main margin for larger screens */
   }
 }
+
 /* Larger Tablets and Small Desktop Screens */
-@media (min-width: 621px) and (max-width:900px){
+@media (min-width: 900px) {
   h1 {
     font-size: 3em;
   }
-
-  .carousel img {
-    height: 900px; /* Increase height for larger tablets and small desktops */
-    width: auto;
-    margin-top: 20px;
+  .carousel {
+    display: flex;
+    justify-content: space-between; /* Space images evenly */
+    align-items: stretch;  /* Ensures images stretch to the same height */
+    transition: max-width 0.3s ease-in-out;
+    margin-top: 100px;
   }
+  .carousel img {
+    height: 500px; /* Increase height for larger tablets and small desktops */
+ }
 
   #photo-gallery img {
     width: 30%; /* Three images per row */
@@ -203,26 +190,26 @@ flex-direction: row;
     margin-top: 100px;
   }
 
-  main {
-;  /* Adjust main margin for larger screens */
-  }
+ 
 }
 
-
 /* Desktop and Larger Screens */
-@media (min-width: 901px) {
+@media (min-width: 1200px) {
   h1 {
     font-size: 4em;
   }
-
+  .carousel {
+    display: flex;
+    justify-content: space-between; /* Space images evenly */
+    align-items: stretch;  /* Ensures images stretch to the same height */
+    transition: max-width 0.3s ease-in-out;
+    margin-top: 100px;
+  }
   .carousel img {
     height: 600px; /* Larger images for large screens */
   }
-#photo-gallery{
-  margin-top: 12%;
-}
+
   #photo-gallery img {
-   
     width: 25%; /* Four images per row */
   }
 
