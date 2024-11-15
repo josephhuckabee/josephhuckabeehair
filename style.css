@@ -122,7 +122,7 @@ flex-direction: row;
 /* Media Queries for Larger Screens */
 
 /* Tablets and Medium Screens */
-@media (min-width: 620px) {
+@media (max-width: 620px) {
   h1 {
     font-size: 2.5em;
   }
