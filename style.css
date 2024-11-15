@@ -145,11 +145,12 @@ flex-direction: row;
   }
 
   .carousel img {
-    height: 600px; /* Increase height for tablets */
+    height: 600px;
+    width: 620px; /* Increase height for tablets */
   }
 
   #photo-gallery img {
-    width: 100%; /* Two images per row */
+    width: 45%; /* Two images per row */
   }
 
   main {
