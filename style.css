@@ -179,7 +179,7 @@ header {
 @media (min-width: 100px) and (max-width: 400px) {
   
   h1{
-    font-size: 24px;
+    font-size: 5px;
   }
  
     #photo-gallery {
@@ -218,7 +218,7 @@ header {
 @media (min-width: 401px) and (max-width: 768px) {
   
   h1{
-    font-size: 42pt;
+    font-size: 42px;
   }
 
     #photo-gallery {
