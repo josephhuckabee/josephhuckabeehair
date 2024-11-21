@@ -134,7 +134,7 @@ header {
   max-width: 400px; /* Maximum width to prevent images from becoming too large */
   object-fit: cover; /* Keeps the aspect ratio of images */
   height: auto;
-  max-width: 50%;
+
 }
 
 /* Flexbox Properties for Responsive Scaling */
