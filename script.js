@@ -72,11 +72,7 @@ function openModal() {
  
 }
 
-// Close modal when the close button is clicked
-closeModalButton.addEventListener("click", () => {
-    moveModalToBottom(); // Move the modal to the bottom
-    localStorage.setItem("visitedBefore", "true"); // Mark as visited
-});
+
 
 // Close modal when clicking anywhere outside the modal content
 window.addEventListener("click", (event) => {
