@@ -1,54 +1,51 @@
 // Image array
 const images = [
-  'sam.jpeg', 'sage1.jpeg', 'angel2.webp', 'taylore_bed.jpeg', 'quinuse.jpg', 'jade.jpeg', 'lean_style.png', 'morg_sit.png', 
-  'julian.jpeg', 'lucy.jpeg', 'hugs.jpeg', 'xiana.jpg', 'em_hands.png', 'kyblonde.jpeg', 
-  'nour.jpeg', 'quinn.jpeg', 'jazelle.jpg', 'mckenna.png',
+  'sam.jpeg', 'sage1.jpeg', 'angel2.webp', 'taylore_bed.jpeg', 'quinuse.jpg', 
+  'jade.jpeg', 'lean_style.png', 'morg_sit.png', 'julian.jpeg', 
+  'lucy.jpeg', 'hugs.jpeg', 'xiana.jpg', 'em_hands.png', 
+  'kyblonde.jpeg', 'nour.jpeg', 'quinn.jpeg', 'jazelle.jpg', 'mckenna.png',
 ];
 
 // Get the carousel container
 const carousel = document.getElementById('carousel');
 
-// Duplicate images for infinite scroll
-const allImages = images.concat(images);
-
 // Add images to the carousel dynamically
-allImages.forEach(src => {
+images.forEach((src) => {
   const img = document.createElement('img');
   img.src = src;
   img.alt = 'Carousel Image';
   carousel.appendChild(img);
 });
 
-// Wait for the DOM and images to fully load
-window.addEventListener('load', () => {
-  // Set initial position and scroll speed
-  let position = 0;
-  const scrollSpeed = 1.25; // Lower values for slower, smoother scrolling
-
-  // Set carousel width dynamically
-  const totalImages = allImages.length;
-  const singleImageWidth = carousel.querySelector('img').offsetWidth;
-  carousel.style.width = `${totalImages * singleImageWidth}px`; // Dynamically adjust the container width
-
-  // Function for smooth continuous scroll
-  function continuousScroll() {
-    position -= scrollSpeed;
-
-    // Move the carousel to the left
-    carousel.style.transform = `translateX(${position}px)`;
-
-    // When the scroll reaches the end of the images, reset
-    if (Math.abs(position) >= (carousel.scrollWidth / 2)) {
-      position = 0; // Reset to the beginning for continuous scrolling
-    }
-
-    requestAnimationFrame(continuousScroll); // Use requestAnimationFrame for smooth animation
-  }
-
-  // Start the continuous scroll
-  continuousScroll();
+// Clone images for a seamless loop
+images.forEach((src) => {
+  const img = document.createElement('img');
+  img.src = src;
+  img.alt = 'Carousel Image Clone';
+  carousel.appendChild(img);
 });
 
+// Set initial position and scroll speed
+let position = 0;
+const scrollSpeed = 1.25; // Adjust this for desired scrolling speed
+
+// Function for smooth continuous scroll
+function continuousScroll() {
+  position -= scrollSpeed;
+  carousel.style.transform = `translateX(${position}px)`; // Move the carousel left
+
+  // Check if the first set of images has fully scrolled out
+  const firstSetWidth = carousel.scrollWidth / 2; 
+  if (Math.abs(position) >= firstSetWidth) {
+    // Reset position for seamless effect
+    position = 0;
+  }
+
+  requestAnimationFrame(continuousScroll); // Use requestAnimationFrame for smooth animation
+}
+
+// Start the continuous scroll
+continuousScroll();
 // ------------------------------------------------------------------------
 // JAVASCRIPT 2/2 | MODAL POPUP -------------------------------------------
 // ------------------------------------------------------------------------
