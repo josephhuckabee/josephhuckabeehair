@@ -150,11 +150,11 @@ header {
   color: white;
   padding: 10px;
 }
-
+/* 
 #icon {
   max-width: 30px;
   height: auto;
-}
+} */
 
 .prices {
   text-align: center;
@@ -170,11 +170,15 @@ header {
   padding: 10px;
 }
 
+.contact_icons{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 .contact_icons img {
   max-width: 50px;
   max-height: 50px;
-  display: flex;
-  flex-direction: row;
+  
 }
 @media (min-width: 100px) and (max-width: 400px) {
   
