@@ -2,7 +2,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;  /* Prevents padding/margin from affecting layout */
+  box-sizing: border-box; 
   font-family: "Merriweather Sans";
 }
 
@@ -10,49 +10,104 @@
 .fjalla-one-regular {
   font-family: "Fjalla One", sans-serif;
   font-weight: 800;
-  font-style: normal;
 }
 
 .merriweatherFont {
   font-family: "Merriweather Sans", serif;
   font-optical-sizing: auto;
-  font-weight: 400; /* Default weight */
-  font-style: normal;
+  font-weight: 400;
+}
+
+/* General modal and backdrop styles */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 999;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 1000;
+  display: none;
+  width: 80%;
+  max-width: 500px;
+  transition: all 0.3s ease;
+}
+
+.modal.shrink {
+  bottom: 0;
+  top: auto;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 200px;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Modal Content */
+.modal-content {
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
 }
 
 /* Global Link Styles */
 a {
   text-decoration: none;
   color: black;
-  padding: clamp(2px, 3vw, 25px); /* Adjust padding based on screen width */
+  padding: clamp(2px, 3vw, 25px);
 }
 
-/* Paragraph Styling */
+a:hover {
+  color: #0056b3;
+  font-size: 22px;
+}
+
+/* Text Styling */
 p {
-  font-size: clamp(1rem, 2vw, 1.25rem); /* Responsive text size */
+  font-size: clamp(1rem, 2vw, 1.25rem);
 }
 
-/* Header Styling */
 h1 {
-  font-size: clamp(1rem, 5vw, 8rem); /* Responsive font size */
-  line-height: 1.3; /* Maintain good spacing */
-  text-align: center; /* Center horizontally */
-  margin: 0; /* Avoid extra spacing by default */
-  font-family: "Fjalla One", sans-serif; /* Ensure correct font */
+  font-size: clamp(1rem, 5vw, 8rem);
+  line-height: 1.3;
+  text-align: center;
+  margin: 0;
+  font-family: "Fjalla One", sans-serif;
 }
 
 /* Navigation Styling */
 nav {
   width: 100%;
   background-color: white;
-  padding: clamp(2px, 2vw, 15px); /* Adjust padding based on screen width */
+  padding: clamp(2px, 2vw, 15px);
   text-align: center;
-  font-size: clamp(1rem, 2vw, 1.25rem); /* Responsive font size */
+  font-size: clamp(1rem, 2vw, 1.25rem);
 }
 
-/* Link Styling within Navigation */
 nav a {
-  padding: clamp(1px, 2vw, 15px); /* Adjust padding based on screen width */
+  padding: clamp(1px, 2vw, 15px);
 }
 
 /* Body Styling */
@@ -60,47 +115,46 @@ body {
   font-family: Arial, sans-serif;
   color: #0d0d0c;
   background-color: white;
-  margin-top: clamp(10px, 10vh, 50px); /* Same as header height to push content below header */
+  margin-top: clamp(10px, 10vh, 50px);
 }
 
 /* Header */
 header {
-  position: fixed; /* Fixes the header to the top of the viewport */
-  top: 0; /* Aligns the header to the top */
-  left: 0; /* Aligns the header to the left */
-  width: 100%; /* Makes the header span the full width */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: white;
-  z-index: 1000;  /* Ensures the header is on top of other content */
+  z-index: 1000;
   background-color: black;
 }
 
-/* Carousel Container */
+/* Carousel and Gallery */
 .carousel-container {
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 100vh; /* Ensures full viewport height */
+  height: 100vh;
 }
 
 .carousel {
   display: flex;
-  justify-content: center; /* Center images horizontally */
-  align-items: center; /* Align images vertically */
-  height: 100%; /* Ensures carousel takes full height */
+  justify-content: center;
+  align-items: center;
+  height: 100%;
   transition: transform 0.3s ease-in-out;
 }
 
 .carousel img {
-  height: 100%;  /* Ensures all images take the full height of the container */
-  width: auto;  /* Ensures aspect ratio is preserved */
-  object-fit: contain; /* Ensures no cropping, image is fully visible */
+  height: 100%;
+  width: auto;
+  object-fit: contain;
   display: block;
 }
 
-/* Photo Gallery Section */
 #photo-gallery {
   display: flex;
   flex-wrap: wrap;
@@ -109,52 +163,41 @@ header {
 }
 
 #photo-gallery img {
-  width: 100%;  /* Full-width images on smaller screens */
+  width: 100%;
   margin: 5px;
   object-fit: cover;
 }
 
 /* Contact Container */
 .contactContainer1 {
-  width: 80vw; /* Takes 80% of the viewport width */
+  width: 80vw;
   text-align: center;
-  padding: 0 5vw; /* Horizontal padding based on viewport width */
-  gap: 5vw; /* Spacing between items based on viewport width */
+  padding: 0 5vw;
+  gap: 5vw;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap; /* Allows wrapping for smaller screen sizes */
-  box-sizing: border-box; /* Ensures padding doesn’t affect width */
-}
-
-/* Image adjustments for scalability */
-.contactContainer1 img {
-  width: 100%;  /* Images take up full width of the container */
-  max-width: 400px; /* Maximum width to prevent images from becoming too large */
-  object-fit: cover; /* Keeps the aspect ratio of images */
-  height: auto;
-
-}
-
-/* Flexbox Properties for Responsive Scaling */
-.contactContainer1 {
-  display: flex;
   flex-wrap: wrap;
-  justify-content: space-around; /* Ensures items are spaced evenly */
-  gap: 2vw; /* Flexible gap for scalability */
+  box-sizing: border-box;
 }
 
-#contact_blurb {
-  background-color: black;
-  color: white;
-  padding: 10px;
-}
-/* 
-#icon {
-  max-width: 30px;
+.contactContainer1 img {
+  width: 100%;
+  max-width: 400px;
+  object-fit: cover;
   height: auto;
-} */
+}
+
+.contact_icons {
+  display: flex;
+  justify-content: center;
+}
+
+.contact_icons img {
+  max-width: 50px;
+  max-height: 50px;
+}
 
 .prices {
   text-align: center;
@@ -170,120 +213,70 @@ header {
   padding: 10px;
 }
 
-.contact_icons{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+#contact_blurb {
+  background-color: black;
+  color: white;
+  padding: 10px;
 }
-.contact_icons img {
-  max-width: 50px;
-  max-height: 50px;
-  
-}
-@media (min-width: 100px) and (max-width: 400px) {
-  
-  h1{
+
+/* Responsive Media Queries */
+@media (max-width: 400px) {
+  h1 {
     font-size: 5px;
   }
- 
-    #photo-gallery {
+
+  #photo-gallery {
     margin-top: 80px;
   }
-  .carousel img {
-    height: 90vh;  /* Adjust height based on the viewport */
-  }
-  #priceyy {
-    margin-top: 100px;
-    display: flex;
-  flex-direction: column;
-  align-items: center;
 
+  .carousel img {
+    height: 90vh;
   }
-  .contact_icons{
-    display: flex;
-    flex-direction: row;
-    padding: 10px;
-  }
-  .contact_icons img{
+
+  .contact_icons img {
     max-width: 40px;
   }
 
-
   .contactContainer1 {
     margin-top: 200px;
-    display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
   }
 }
-/* Media Queries for Responsive Design */
 
-@media (min-width: 401px) and (max-width: 768px) {
-  
-  h1{
+@media (max-width: 768px) {
+  h1 {
     font-size: 42px;
   }
 
-    #photo-gallery {
+  #photo-gallery {
     margin-top: 100px;
   }
 
   #photo-gallery img {
-    width: 90%; /* Adjust to 90% on smaller screens */
+    width: 90%;
   }
 
   .carousel img {
-    height: 90vh;  /* Adjust height based on the viewport */
+    height: 90vh;
   }
 
-  .contact_icons {
-   max-width: 30px;
+  .contact_icons img {
+    max-width: 30px;
   }
-
-  nav a {
-    padding: 10px;
-  }
-
-  #priceyy {
-    margin-top: 100px;
-    display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  }
-  .contact_icons{
-    display: flex;
-    flex-direction: row;
-
-  
-  }
-  .contact_icons img{
-    max-width:30px;
-  }
-
 
   .contactContainer1 {
     margin-top: 200px;
-    display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
   }
-
-  .contactContainer1  img{}
 }
 
-/* Medium Screens (Tablets and Small Desktops) */
 @media (min-width: 628px) and (max-width: 899px) {
-  .contactContainer1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
   .carousel img {
-    height: 80vh; /* Adjust height for tablets */
+    height: 80vh;
   }
 
   #photo-gallery {
@@ -291,28 +284,26 @@ header {
   }
 
   #photo-gallery img {
-    width: 48%; /* Two images per row */
+    width: 48%;
   }
 }
 
-/* Larger Tablets and Small Desktop Screens */
 @media (min-width: 900px) and (max-width: 1199px) {
   .carousel img {
-    height: 60vh; /* Adjust image height for larger tablets */
+    height: 60vh;
   }
 
   #photo-gallery img {
-    width: 33.33%; /* Three images per row */
+    width: 33.33%;
   }
 }
 
-/* Desktop and Larger Screens */
 @media (min-width: 1200px) {
   .carousel img {
-    height: 80vh; /* Larger images for large screens */
+    height: 80vh;
   }
 
   #photo-gallery img {
-    width: 25%; /* Four images per row */
+    width: 25%;
   }
 }

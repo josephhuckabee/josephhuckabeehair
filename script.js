@@ -59,28 +59,45 @@ const modal = document.getElementById("modal");
 const modalBackdrop = document.getElementById("modalBackdrop"); // Get the backdrop
 const closeModalButton = document.getElementById("closeModal");
 
+// Check if the user has visited before
+if (!localStorage.getItem("visitedBefore")) {
+    // Open the modal on the first page load
+    window.onload = openModal;
+}
+
 // Function to open the modal
 function openModal() {
     modal.style.display = "block";
     modalBackdrop.style.display = "block"; // Show the backdrop
-   
+ 
 }
 
 // Close modal when the close button is clicked
 closeModalButton.addEventListener("click", () => {
-    modal.style.display = "none";
-    modalBackdrop.style.display = "none"; // Hide the backdrop
-    document.body.style.filter = "none"; // Remove blur from body content
+    moveModalToBottom(); // Move the modal to the bottom
+    localStorage.setItem("visitedBefore", "true"); // Mark as visited
 });
 
 // Close modal when clicking anywhere outside the modal content
 window.addEventListener("click", (event) => {
     if (event.target === modalBackdrop) { // Check if click is on the backdrop
-        modal.style.display = "none";
-        modalBackdrop.style.display = "none"; // Hide the backdrop
-        document.body.style.filter = "none"; // Remove blur from body content
+        moveModalToBottom();
+        localStorage.setItem("visitedBefore", "true"); // Mark as visited
     }
 });
 
-// Open modal when the page loads
-window.onload = openModal;
+// Function to move the modal to the bottom
+function moveModalToBottom() {
+    modal.style.transition = "transform 0.5s ease-in-out, opacity 0.5s ease-in-out";
+    modal.style.transform = "translateX(-50%) translateY(100vh)"; // Move modal to bottom
+    modal.style.opacity = "0"; // Fade the modal out
+
+    // Once the transition is complete, hide the modal
+    setTimeout(() => {
+        modal.style.display = "none"; // Hide the modal
+        modal.style.opacity = "1"; // Reset opacity for future use
+        modal.style.transform = "translateX(-50%) translateY(0)"; // Reset position
+        document.body.style.filter = "none"; // Remove blur from the body content
+        modalBackdrop.style.display = "none"; // Hide the backdrop
+    }, 500); // Match the timeout with the transition duration
+}

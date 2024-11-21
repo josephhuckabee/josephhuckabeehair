@@ -4,37 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
-    <title>Joseph Huckabee</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <title>Joseph Huckabee</title>
 </head>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css">
-</head>
-<center> 
-    <header>
-    <h1>Joseph Huckabee</h1>
-    <nav>
-        <a href="index.html" id="portLink">Home</a>
-        <a href="portfolio.html" id="portLink">Portfolio</a>
-        <a href="services.html" id="portLink">Booking</a>
-        <a href="contact.html" id="portLink">Contact</a>
-       </nav>
-  
-        </header>
-    </center>
 <body>
 
-    <section class="carasoul">
+   <!-- Modal structure -->
+   <div id="modalBackdrop" class="modal-backdrop"></div>
+   <div id="modal" class="modal">
+       <div class="modal-content">
+           <span id="closeModal" class="close-btn">&times;</span>
+           <h2>Enjoy 20% off your next appointment!</h2><br>
+           <p>Join our newletter.<br><br> A monthly greeting that's packed with the latest trends,
+             must-have products, and exclusive promotions.
+             Stay in the know and treat yourself with insider offers! <br><br>No Spam. Swear!</p><br>
+           <!-- Netlify Form -->
+           <form name="contact" method="POST" data-netlify="true" id="contactForm">
+               <input type="hidden" name="form-name" value="contact">
+               
+               <!-- Name Field -->
+               <label for="name">Name</label>
+               <input type="text" name="name" id="name" required>
+<br>
+               <!-- Email Field -->
+               <label for="email">Email</label>
+               <input type="email" name="email" id="email" required>
+<br><br>
+               <!-- Submit Button -->
+               <button type="submit">Sign Up</button>
+           </form>
+
+       </div>
+   </div>
+
+    <header>
+        <h1>Joseph Huckabee</h1>
+        <nav>
+            <a href="index.html" id="portLink">Home</a>
+            <a href="portfolio.html" id="portLink">Portfolio</a>
+            <a href="services.html" id="portLink">Booking</a>
+            <a href="contact.html" id="portLink">Contact</a>
+        </nav>
+    </header>
+
+    <section class="carousel">
         <div class="carousel-container">
-        <div class="carousel" id="carousel"></div>
+            <div class="carousel" id="carousel"></div>
         </div>
     </section>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
+
 </body>
 <footer></footer>
 </html>
