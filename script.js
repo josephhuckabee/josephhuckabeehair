@@ -1,16 +1,12 @@
-// ------------------------------------------------------------------------
-// JAVASCRIPT 1/2 | CAROUSEL -------------------------------------------
-// ------------------------------------------------------------------------
 // Image array
 const images = [
   'sam.jpeg', 'sage1.jpeg', 'angel2.webp', 'taylore_bed.jpeg', 'quinuse.jpg', 'jade.jpeg', 'lean_style.png', 'morg_sit.png', 
-  'julian.jpeg', 'lucy.jpeg','hugs.jpeg', 'xiana.jpg', 'em_hands.png' ,'kyblonde.jpeg', 
-   'nour.jpeg', 'quinn.jpeg', 'jazelle.jpg', 'mckenna.png',
+  'julian.jpeg', 'lucy.jpeg', 'hugs.jpeg', 'xiana.jpg', 'em_hands.png', 'kyblonde.jpeg', 
+  'nour.jpeg', 'quinn.jpeg', 'jazelle.jpg', 'mckenna.png',
 ];
 
 // Get the carousel container
 const carousel = document.getElementById('carousel');
-
 
 // Duplicate images for infinite scroll
 const allImages = images.concat(images);
@@ -22,25 +18,36 @@ allImages.forEach(src => {
   img.alt = 'Carousel Image';
   carousel.appendChild(img);
 });
-// Set initial position and scroll speed
-let position = 0;
-const scrollSpeed = 1; // Lower values for slower, smoother scrolling
 
-// Function for smooth continuous scroll
-function continuousScroll() {
-  position -= scrollSpeed;
-  carousel.style.transform = `translateX(${position}px)`; // Move the carousel to the left
+// Wait for the DOM and images to fully load
+window.addEventListener('load', () => {
+  // Set initial position and scroll speed
+  let position = 0;
+  const scrollSpeed = 1.25; // Lower values for slower, smoother scrolling
 
-  // When the scroll reaches the end of the images, reset
-  if (Math.abs(position) >= carousel.scrollWidth /2) {
-    position = 0; // Reset to the beginning for continuous scrolling
+  // Set carousel width dynamically
+  const totalImages = allImages.length;
+  const singleImageWidth = carousel.querySelector('img').offsetWidth;
+  carousel.style.width = `${totalImages * singleImageWidth}px`; // Dynamically adjust the container width
+
+  // Function for smooth continuous scroll
+  function continuousScroll() {
+    position -= scrollSpeed;
+
+    // Move the carousel to the left
+    carousel.style.transform = `translateX(${position}px)`;
+
+    // When the scroll reaches the end of the images, reset
+    if (Math.abs(position) >= (carousel.scrollWidth / 2)) {
+      position = 0; // Reset to the beginning for continuous scrolling
+    }
+
+    requestAnimationFrame(continuousScroll); // Use requestAnimationFrame for smooth animation
   }
 
-  requestAnimationFrame(continuousScroll); // Use requestAnimationFrame for smooth animation
-}
-
-// Start the continuous scroll
-continuousScroll();
+  // Start the continuous scroll
+  continuousScroll();
+});
 
 // ------------------------------------------------------------------------
 // JAVASCRIPT 2/2 | MODAL POPUP -------------------------------------------
