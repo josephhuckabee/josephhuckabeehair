@@ -35,9 +35,10 @@ function continuousScroll() {
   carousel.style.transform = `translateX(${position}px)`; // Move the carousel left
 
   // Check if the first set of images has fully scrolled out
-  const firstSetWidth = carousel.scrollWidth / 2; 
-  if (Math.abs(position) >= firstSetWidth) {
-    // Reset position for seamless effect
+  const totalWidth = carousel.scrollWidth / 4; // The full width of the carousel (after duplication)
+  
+  if (Math.abs(position) >= totalWidth) {
+    // Reset position for seamless effect (when it has scrolled all images out)
     position = 0;
   }
 
