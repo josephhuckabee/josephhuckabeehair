@@ -57,44 +57,57 @@ continuousScroll();
 
 // Get modal elements
 const modal = document.getElementById("modal");
-const modalBackdrop = document.getElementById("modalBackdrop"); // Get the backdrop
+const modalBackdrop = document.getElementById("modalBackdrop");
 const closeModalButton = document.getElementById("closeModal");
+const contactForm = document.getElementById("contactForm");
 
 // Check if the user has visited before
 if (!localStorage.getItem("visitedBefore")) {
-    // Open the modal on the first page load
-    window.onload = openModal;
+    window.onload = openModal; // Open modal on first visit
 }
 
 // Function to open the modal
 function openModal() {
     modal.style.display = "block";
     modalBackdrop.style.display = "block"; // Show the backdrop
- 
 }
 
+// Function to close the modal
+function closeModal() {
+    // Animate modal closing
+    modal.style.transition = "transform 0.5s ease-in-out, opacity 0.5s ease-in-out";
+    modal.style.transform = "translateX(-50%) translateY(100vh)"; // Slide down
+    modal.style.opacity = "0"; // Fade out
 
+    // Hide modal and reset styles after animation
+    setTimeout(() => {
+        modal.style.display = "none"; // Hide modal
+        modal.style.opacity = "1"; // Reset opacity
+        modal.style.transform = "translateX(-50%) translateY(0)"; // Reset position
+        modalBackdrop.style.display = "none"; // Hide backdrop
+    }, 500); // Match timeout to transition duration
 
-// Close modal when clicking anywhere outside the modal content
+    // Mark as visited to prevent reopening
+    localStorage.setItem("visitedBefore", "true");
+}
+
+// Event listener for closing the modal when clicking the backdrop
 window.addEventListener("click", (event) => {
-    if (event.target === modalBackdrop) { // Check if click is on the backdrop
-        moveModalToBottom();
-        localStorage.setItem("visitedBefore", "true"); // Mark as visited
+    if (event.target === modalBackdrop) { // Click outside the modal content
+        closeModal();
     }
 });
 
-// Function to move the modal to the bottom
-function moveModalToBottom() {
-    modal.style.transition = "transform 0.5s ease-in-out, opacity 0.5s ease-in-out";
-    modal.style.transform = "translateX(-50%) translateY(100vh)"; // Move modal to bottom
-    modal.style.opacity = "0"; // Fade the modal out
+// Event listener for closing the modal via the close button
+closeModalButton.addEventListener("click", closeModal);
 
-    // Once the transition is complete, hide the modal
-    setTimeout(() => {
-        modal.style.display = "none"; // Hide the modal
-        modal.style.opacity = "1"; // Reset opacity for future use
-        modal.style.transform = "translateX(-50%) translateY(0)"; // Reset position
-        document.body.style.filter = "none"; // Remove blur from the body content
-        modalBackdrop.style.display = "none"; // Hide the backdrop
-    }, 500); // Match the timeout with the transition duration
-}
+// Event listener for the form submission
+contactForm.addEventListener("submit", (event) => {
+    event.preventDefault(); // Prevent default form submission behavior
+
+    // Show success message or perform additional actions here
+    alert("Thank you for signing up!");
+
+    // Close the modal after successful form submission
+    closeModal();
+});
