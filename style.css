@@ -27,6 +27,7 @@
   height: 100%;
   display: none;
   z-index: 999;
+  padding: 20px;
 }
 
 .modal {
@@ -39,7 +40,7 @@
   padding: 20px;
   z-index: 1000;
   display: none;
-  width: 80%;
+  width: 90%;
   max-width: 500px;
   transition: all 0.3s ease;
 }
