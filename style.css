@@ -110,6 +110,7 @@ nav a {
   padding: clamp(1px, 2vw, 15px);
   color:black;
 }
+
 nav a:hover {
   color:#ff66cc;
 }
@@ -199,7 +200,6 @@ header {
   align-items: center; /* Vertically center icons */
   width: 90%; /* 90% of the parent width, adjust as needed */
   margin: 120px auto 0; /* Add space from the header with margin-top (adjust as needed) */
-  /* Add some internal space for better look */
   border: 3px solid #000; /* Border around the container */
   border-radius: 10px; /* Rounded corners */
   box-sizing: border-box; 
