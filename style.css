@@ -104,14 +104,13 @@ nav {
   padding: clamp(2px, 2vw, 15px);
   text-align: center;
   font-size: clamp(1rem, 2vw, 1.25rem);
-
 }
 
 nav a {
   padding: clamp(1px, 2vw, 15px);
   color:black;
 }
-nav a:hover{
+nav a:hover {
   color:#ff66cc;
 }
 
@@ -194,30 +193,17 @@ header {
   height: auto;
 }
 
-
-
-.contCont{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 200px;
-  width: 100%; /* Full width of the viewport */
-  height: 100vh; /* Full viewport height */
-  padding: 0; /* Ensure no extra padding is affecting layout */
-  margin: 0; /* Ensure no extra margins are affecting layout */
-
-}
 .contact_icons {
   display: flex; /* Use flexbox layout */
   justify-content: space-between; /* Equidistant spacing between icons */
   align-items: center; /* Vertically center icons */
-  width: 70%; /* 90% of the parent width, adjust as needed */
+  width: 90%; /* 90% of the parent width, adjust as needed */
   margin: 120px auto 0; /* Add space from the header with margin-top (adjust as needed) */
-  padding: 5px; /* Add some internal space for better look */
+  /* Add some internal space for better look */
   border: 3px solid #000; /* Border around the container */
   border-radius: 10px; /* Rounded corners */
   box-sizing: border-box; 
-  background-color:#1e6c96;;
+  font-size: 15px;
 }
 
 .prices {
@@ -259,7 +245,6 @@ header {
   }
 
   .contactContainer1 {
- 
     flex-direction: column;
     align-items: center;
     width: 100%;
@@ -288,7 +273,6 @@ header {
   }
 
   .contactContainer1 {
-
     flex-direction: column;
     align-items: center;
     width: 100%;
