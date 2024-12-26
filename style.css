@@ -228,17 +228,15 @@ header {
 }
 
 #qr_code{
-  width: 90vw;
   text-align: center;
  margin-top: 100px;
-  gap: 5vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  box-sizing: border-box;
+
+  
 }
+
+
+
 
 footer{
  margin-top: 800px;
@@ -250,7 +248,7 @@ footer{
     font-size: 20px;
   }
 #qr_code{
-  font-size: 72px;
+  font-size: 21px;
 }
   #photo-gallery {
     margin-top: 80px;
