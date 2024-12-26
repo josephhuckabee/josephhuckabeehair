@@ -18,61 +18,6 @@
   font-weight: 400;
 }
 
-/* General modal and backdrop styles */
-.modal-backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: none;
-  z-index: 999;
-  padding: 20px;
-}
-
-.modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  border-radius: 8px;
-  padding: 20px;
-  z-index: 1000;
-  display: none;
-  width: 90%;
-  max-width: 500px;
-  transition: all 0.3s ease;
-}
-
-.modal.shrink {
-  bottom: 0;
-  top: auto;
-  left: 0;
-  right: 0;
-  width: 100%;
-  max-width: 200px;
-  border-radius: 8px 8px 0 0;
-}
-
-/* Modal Content */
-.modal-content {
-  text-align: center;
-}
-
-button {
-  padding: 10px 20px;
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
 /* Global Link Styles */
 a {
   text-decoration: none;
@@ -252,7 +197,7 @@ footer{
 }
 
 /* Responsive Media Queries */
-@media (max-width: 400px) {
+@media (max-width: 627px) {
   h1 {
     font-size: 42px;
   }
