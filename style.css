@@ -230,7 +230,7 @@ header {
 #qr_code{
   width: 90vw;
   text-align: center;
-  /* padding: 200px; */
+ margin-top: 150px;
   gap: 5vw;
   display: flex;
   flex-direction: column;
