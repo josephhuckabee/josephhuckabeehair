@@ -227,6 +227,19 @@ header {
   padding: 10px;
 }
 
+#qr_code{
+  width: 90vw;
+  text-align: center;
+  padding: 200px;
+  gap: 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
 /* Responsive Media Queries */
 @media (max-width: 400px) {
   h1 {
