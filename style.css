@@ -152,6 +152,7 @@ header {
   align-items: center;
   height: 100%;
   transition: transform 0.3s ease-in-out;
+
 }
 
 .carousel img {
@@ -236,7 +237,15 @@ header {
 }
 
 
-
+#qr_code img {
+  width: 100%;
+  max-width: 600px;
+  object-fit: cover;
+  height: auto;
+}
+#cost{
+  margin-top: 150px;
+}
 
 footer{
  margin-top: 800px;
@@ -245,15 +254,17 @@ footer{
 /* Responsive Media Queries */
 @media (max-width: 400px) {
   h1 {
-    font-size: 20px;
+    font-size: 42px;
   }
 #qr_code{
-  font-size: 21px;
+  font-size: 23px;
 }
   #photo-gallery {
     margin-top: 80px;
   }
-
+.carousel{
+  margin-top: 15px;
+}
   .carousel img {
     height: 90vh;
   }
@@ -271,33 +282,6 @@ footer{
  
 }
 
-@media (max-width: 768px) {
-  h1 {
-    font-size: 42px;
-  }
-
-  #photo-gallery {
-    margin-top: 100px;
-  }
-
-  #photo-gallery img {
-    width: 90%;
-  }
-
-  .carousel img {
-    height: 90vh;
-  }
-
-  .contact_icons img {
-    max-width: 40px;
-  }
-
-  .contactContainer1 {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-}
 
 @media (min-width: 628px) and (max-width: 899px) {
   .carousel img {
@@ -305,7 +289,7 @@ footer{
   }
 
   #photo-gallery {
-    margin-top: 120px;
+    margin-top: 100px;
   }
 
   #photo-gallery img {
@@ -315,11 +299,16 @@ footer{
 
 @media (min-width: 900px) and (max-width: 1199px) {
   .carousel img {
-    height: 60vh;
+    height: 80vh;
+    margin-top: 50px;
   }
 
+#photo-gallery{
+  margin-top: 120px;
+}
   #photo-gallery img {
     width: 33.33%;
+   
   }
 }
 
@@ -329,6 +318,6 @@ footer{
   }
 
   #photo-gallery img {
-    width: 25%;
+   width: 33.33%;
   }
 }
