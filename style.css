@@ -126,16 +126,19 @@ body {
 
 /* Header */
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: white;
-  z-index: 1000;
-  background-color: #231f20;
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto; /* Optional, adjust height as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    background-color: #231f20;
+    z-index: 1000;
+  }
 }
 
 /* Carousel and Gallery */
@@ -278,7 +281,9 @@ footer{
     align-items: center;
     width: 100%;
   }
+header{
 
+}
  
 }
 
