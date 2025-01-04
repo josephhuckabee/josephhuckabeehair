@@ -5,81 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: #ffffff;
+            background: linear-gradient(to bottom, #4FC2F7, #69BF70);
             color: #333;
             line-height: 1.6;
         }
         .container {
             max-width: 600px;
             margin: 20px auto;
-            background: #fff;
+            background: rgba(255, 255, 255, 0.9);
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .header {
             text-align: center;
-            background: #f7f7f7;
+            background: linear-gradient(to right, #69BF70, #4FC2F7);
+            color: white;
             padding: 30px;
-            border-radius: 8px 8px 0 0;
+            border-radius: 12px 12px 0 0;
         }
         .header h1 {
             margin: 0;
             font-size: 28px;
             font-weight: bold;
-            color: #4FC2F7;
-        }
-        .header img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-top: 20px;
         }
         .section {
             margin: 30px 0;
         }
         .section h2 {
             font-size: 22px;
-            color: #69BF70;
+            color: #4FC2F7;
             text-align: center;
             margin-bottom: 15px;
         }
         .box {
-            background: #f7f7f7;
+            background: rgba(255, 255, 255, 0.95);
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 12px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        .box img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 15px;
+        .box ul {
+            list-style: none;
+            padding: 0;
         }
-        .cta-button {
-            display: inline-block;
-            background: #4FC2F7;
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 5px;
+        .box ul li {
+            margin: 10px 0;
+        }
+        .box ul li a {
+            color: #4FC2F7;
             font-weight: bold;
-            text-align: center;
-            margin-top: 20px;
+            text-decoration: none;
         }
-        .cta-button:hover {
-            background: #69BF70;
+        .box ul li a:hover {
+            text-decoration: underline;
         }
         .thank-you {
             text-align: center;
-            background: #f7f7f7;
+            background: rgba(255, 255, 255, 0.9);
             color: #333;
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 12px;
             margin: 30px 0;
             font-size: 16px;
             font-style: italic;
@@ -112,40 +101,52 @@
         <div class="header">
             <h1>Welcome to Your Best Hair Year!</h1>
             <p>Start 2025 with healthy, vibrant hair. Here's your guide to winter care, from in-salon services to at-home essentials.</p>
-            <img src="placeholder-header.jpg" alt="Hair Care Banner">
         </div>
 
         <div class="section">
             <h2>Winter Hair Color Trends</h2>
             <div class="box">
-                <img src="placeholder-color-trends.jpg" alt="Winter Hair Colors">
-                <p>This winter, cozy tones are in. Soft neutral golds add warmth and radiance, velvety chocolate browns bring richness and polish, and ruby reds strike the perfect balance of bold and natural. Enhance these shades with a nutrient-rich gloss for shine and health all season long.</p>
+                <p>This winter, embrace cozy tones that look natural and effortless:</p>
+                <ul>
+                    <li><strong>Soft Neutral Golds:</strong> Add warmth and glow.</li>
+                    <li><strong>Velvety Chocolate Browns:</strong> Polished and luxurious.</li>
+                    <li><strong>Rich Ruby Reds:</strong> Bold yet natural.</li>
+                </ul>
+                <p>Pair these shades with a nutrient-rich gloss to enhance shine and keep your hair healthy all season.</p>
             </div>
         </div>
 
         <div class="section">
             <h2>At-Home Care Essentials</h2>
             <div class="box">
-                <img src="placeholder-care-essentials.jpg" alt="Hair Care Products">
-                <p>Maintain your hair’s health at home. Detox weekly with a <a href="https://www.k18hair.com/products/k18-detox-shampoo">clarifying shampoo</a> to remove buildup. Follow with <a href="https://www.k18hair.com/products/k18-leave-in-molecular-repair-mask">K18 Molecular Repair Mask</a> to restore strength, and finish with <a href="https://www.christopherobin.com/products/regenerating-mask-with-prickly-pear-oil">Christophe Robin Regenerating Mask</a> for hydration and softness. Stick to this for transformative results!</p>
+                <p>Healthy hair starts at home. Stick with this routine:</p>
+                <ul>
+                    <li>Use a <a href="https://www.k18hair.com/products/k18-detox-shampoo">clarifying shampoo</a> once a week to detox and remove buildup.</li>
+                    <li>Follow up with <a href="https://www.k18hair.com/products/k18-leave-in-molecular-repair-mask">K18 Molecular Repair Mask</a> for 4 minutes.</li>
+                    <li>Finish with the <a href="https://www.christopherobin.com/products/regenerating-mask-with-prickly-pear-oil">Christophe Robin Regenerating Mask</a> for 5 minutes to hydrate.</li>
+                </ul>
+                <p>Stick to this routine for three months, and you'll see a transformative difference.</p>
             </div>
         </div>
 
         <div class="section">
             <h2>Tools to Elevate Your Routine</h2>
             <div class="box">
-                <img src="placeholder-tools.jpg" alt="Hair Tools">
-                <p>The right tools matter. Use the <a href="https://www.tangleteezer.com">Tangle Teezer Ultimate Detangler</a> for gentle brushing, switch to <a href="https://www.sephora.com/shop/hair-scrunchies">soft scrunchies</a> to prevent breakage, and invest in <a href="https://www.slip.com/collections/pillowcases">silk pillowcases</a> for frizz-free mornings. Don’t forget a <a href="https://www.aquasana.com/shower-filters">shower filter</a> to remove chlorine and keep hair shiny.</p>
+                <p>Upgrade your routine with these tools:</p>
+                <ul>
+                    <li><a href="https://www.tangleteezer.com">Tangle Teezer Ultimate Detangler</a>: Gently brushes wet hair without breakage.</li>
+                    <li><a href="https://www.sephora.com/shop/hair-scrunchies">Soft Scrunchies</a>: Protect strands compared to tight elastics.</li>
+                    <li><a href="https://www.slip.com/collections/pillowcases">Silk Pillowcases</a>: Reduce frizz and keep hair moisturized overnight.</li>
+                    <li><a href="https://www.aquasana.com/shower-filters">Shower Filter</a>: Removes impurities like chlorine for healthier, shinier hair.</li>
+                </ul>
             </div>
         </div>
 
         <div class="section">
             <h2>Salon Services</h2>
             <div class="box">
-                <img src="placeholder-salon.jpg" alt="Salon Services">
                 <h3>Skip the Bleach</h3>
-                <p>Swap highlights for a nutrient-rich gloss this winter. This deposit-only treatment revives dull tones, adds shine, and strengthens your hair with every application—perfect for a seasonal refresh without the damage of bleach.</p>
-                <a href="#" class="cta-button">Book Your Gloss</a>
+                <p>Instead of highlights, try a nutrient-rich gloss. This deposit-only color adds vibrancy and shine while conditioning and strengthening your hair—perfect for winter months.</p>
             </div>
         </div>
 
