@@ -119,7 +119,7 @@ contactForm.addEventListener("submit", (event) => {
 // ------------------------------------------------------------------------
 
 // Array of image filenames (just the names, not the folder path)
-const imageFilenames = [
+const imageFileNames = [
   'angel2.webp', 'art.jpeg', 'banhs.jpeg', 'benji.jpg', 'bg.png',
   'bloodred.jpeg', 'blue_arua.jpg', 'bluegreen.JPG', 'bluyel.jpeg',
   'booknow.png', 'cat1.jpeg', 'dream.png', 'dreammer.jpeg', 'dusty.jpeg',
@@ -132,10 +132,10 @@ const imageFilenames = [
 const gallery = document.getElementById('photo-gallery');
 
 // Loop through filenames and create <img> elements
-imageFilenames.forEach(filename => {
+imageFileNames.forEach(filename => {
   const img = document.createElement('img');
   img.src = `/images/${filename}`;
   img.alt = filename.split('.')[0]; // alt text = filename without extension
-  // img.loading = 'lazy'; 
+  img.loading = 'lazy'; 
   gallery.appendChild(img);
 });
