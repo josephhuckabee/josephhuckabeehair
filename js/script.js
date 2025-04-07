@@ -69,6 +69,6 @@ imageFileNames.forEach(filename => {
   img.src = `/images/`;
   img.alt = filename.split('.')[0]; // alt text = filename without extension
   img.loading = 'lazy'; 
-  gallery.appendChild(img);
+
 });
 
