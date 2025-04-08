@@ -106,17 +106,18 @@ header {
   display: block;
 }
 
-#photo-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  height: 100vh;
+#photo-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px;
+  padding: 10px;
 }
 
-#photo-gallery img {
+.photo img {
   width: 100%;
-  margin: 5px;
+  height: auto;
   object-fit: cover;
+  display: block;
 }
 
 /* Contact Container */

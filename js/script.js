@@ -1,3 +1,7 @@
+// ------------------------------------------------------------------------
+// JAVASCRIPT 2/3 | Carousel Scroll ----------------------------------------
+// ------------------------------------------------------------------------
+
 // Step 1: Just the image filenames (clean and simple)
 const filenames = [
   'sam.jpeg', 'sage1.jpeg', 'angel2.webp', 'taylore_bed.jpeg', 'quinuse.jpg', 
@@ -48,27 +52,4 @@ function continuousScroll() {
 
 // Start the carousel scroll
 continuousScroll();
-
-
-// ------------------------------------------------------------------------
-// JAVASCRIPT 3/3 | port table -------------------------------------------
-// ------------------------------------------------------------------------
-
-// Array of image filenames (just the names, not the folder path)
-const imageFileNames = [
-'art.jpeg',
-'benji.jpg'
-];
-
-// Get the gallery container
-const gallery = document.getElementById('photo-gallery');
-
-// Loop through filenames and create <img> elements
-imageFileNames.forEach(filename => {
-  const img = document.createElement('img');
-  img.src = `/images/`;
-  img.alt = filename.split('.')[0]; // alt text = filename without extension
-  img.loading = 'lazy'; 
-
-});
 
