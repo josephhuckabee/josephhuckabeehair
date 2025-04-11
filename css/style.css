@@ -192,6 +192,14 @@ header {
   margin-top: 150px;
 }
 
+form {
+  width: 90%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap:50px;
+}
+
 footer{
  margin-top: 800px;
 }
@@ -223,9 +231,7 @@ footer{
     align-items: center;
     width: 100%;
   }
-header{
-  
-}
+
  
 }
 
