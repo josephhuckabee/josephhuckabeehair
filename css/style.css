@@ -189,15 +189,22 @@ header {
   height: auto;
 }
 #cost{
-  margin-top: 150px;
+  margin-top: 150px;  
 }
 
+
+#cost form{
+  margin-left: 25%;
+}
 form {
-  width: 90%;
+  width: 100%;
   max-width: 300px;
   display: flex;
   flex-direction: column;
   gap:50px;
+  align-items: center; /* centers the form fields horizontally */
+  text-align: center;
+ 
 }
 
 footer{
