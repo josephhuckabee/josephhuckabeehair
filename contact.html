@@ -10,50 +10,52 @@
 </head>
 <body>
 
-    <header>
-        <h1>Joseph Huckabee</h1>
-        <nav>
-            <a href="index.html" id="portLink">Home</a>
-            <a href="portfolio.html" id="portLink">Portfolio</a>
-            <a href="services.html" id="portLink">Services</a>
-            <a href="contact.html" id="portLink">Contact</a>
-        </nav>
-    </header>
-<main>
-    <div id="cost">
-        Thanks for your continued support. <br>
-        Please sign up for our monthly newsletter. <br>
-        Stay up to date on trends, scheduling, and special promotions.<br>
-  
-   <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="contact" />
-        
-        <!-- Honeypot field (hidden from users) -->
-        <p hidden>
-            <label>Don’t fill this out: <input name="bot-field" /></label>
-        </p>
+  <header>
+    <div class="hero-card">Joseph Huckabee</div>
+    <div class="header-container">
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-        <!-- Actual form fields -->
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" placeholder="Your Message"></textarea>
-        
-        <button type="submit">Sign Up</button>
+  <main class="contact">
+    <p>
+      Thanks for your continued support. <br>
+      Please sign up for our monthly newsletter. <br>
+      Stay up to date on trends, scheduling, and special promotions.
+    </p>
+
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact" />
+
+      <p hidden>
+        <label>Don’t fill this out: <input name="bot-field" /></label>
+      </p>
+
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message"></textarea>
+
+      <button type="submit">Sign Up</button>
     </form>
-</div>
-</main>
+  </main>
+
+  <footer>
+    <p style="font-size: 0.8rem; color: #777;">
+      © 2025 Joseph Huckabee. All rights reserved. 
+      All images and content on this site are the exclusive property of Joseph Huckabee 
+      and may not be copied, reproduced, shared, edited, or used in any form without 
+      express written permission.
+    </p>
+  </footer>
+
+  <script src="/js/script.js"></script>
+
+
 </body>
-<footer>
-    <footer>
-        <p style="font-size: 0.8rem; color: #777;">
-          © 2025 Joseph Huckabee. All rights reserved. 
-          All images and content on this site are the exclusive property of Joseph Huckabee 
-          and may not be copied, reproduced, shared, edited, or used in any form without 
-          express written permission.
-        </p>
-      </footer>
-      
-</footer>
-
-
 </html>

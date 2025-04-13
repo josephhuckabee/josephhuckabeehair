@@ -41,10 +41,10 @@ function continuousScroll() {
   position -= scrollSpeed;
   carousel.style.transform = `translateX(${position}px)`; // Move the carousel left
 
-  const totalWidth = carousel.scrollWidth / 4; // Adjust as needed
+  const totalWidth = carousel.scrollWidth / 2;
 
   if (Math.abs(position) >= totalWidth) {
-    position = 0; // Reset for seamless loop
+    position = 0;
   }
 
   requestAnimationFrame(continuousScroll);
@@ -53,3 +53,39 @@ function continuousScroll() {
 // Start the carousel scroll
 continuousScroll();
 
+// ------------------------------------------------------------------------
+// JAVASCRIPT 3/3 | Mobile Nav Toggle -------------------------------------
+// ------------------------------------------------------------------------
+
+function toggleMenu() {
+  const nav = document.querySelector('.nav-links');
+  if (nav) {
+    nav.classList.toggle('active');
+    console.log('Hamburger clicked: toggled nav menu');
+  } else {
+    console.warn('No .nav-links element found.');
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.querySelector('.hamburger');
+  if (hamburger) {
+    hamburger.addEventListener('click', toggleMenu);
+  }
+});
+
+document.addEventListener('click', function(event) {
+  const nav = document.querySelector('.nav-links');
+  const hamburger = document.querySelector('.hamburger');
+
+  if (!nav || !hamburger) return;
+
+  const clickedInsideNav = nav.contains(event.target);
+  const clickedHamburger = hamburger.contains(event.target);
+  const navIsOpen = nav.classList.contains('active');
+
+  if (navIsOpen && !clickedInsideNav && !clickedHamburger) {
+    nav.classList.remove('active');
+    console.log('Click outside: closed nav');
+  }
+});
