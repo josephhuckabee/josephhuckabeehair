@@ -78,6 +78,22 @@ document.addEventListener('DOMContentLoaded', () => {
   if (hamburger) {
     hamburger.addEventListener('click', toggleMenu);
   }
+
+  const sectionTitles = document.querySelectorAll('.service-section-title');
+  const sections = document.querySelectorAll('.services section ul');
+
+  sectionTitles.forEach((title, index) => {
+    title.addEventListener('click', (event) => {
+      event.stopPropagation();
+      sections.forEach((ul, i) => {
+        ul.style.display = i === index ? (ul.style.display === 'block' ? 'none' : 'block') : 'none';
+      });
+    });
+  });
+
+  document.addEventListener('click', () => {
+    sections.forEach(ul => ul.style.display = 'none');
+  });
 });
 
 document.addEventListener('click', function(event) {
@@ -94,4 +110,26 @@ document.addEventListener('click', function(event) {
     nav.classList.remove('active');
     console.log('Click outside: closed nav');
   }
+});
+
+// ------------------------------------------------------------------------
+// JAVASCRIPT 4/4 | Services Page Dropdown Toggle -------------------------
+// ------------------------------------------------------------------------
+
+document.addEventListener('DOMContentLoaded', () => {
+  const sectionTitles = document.querySelectorAll('.service-section-title');
+  const serviceLists = document.querySelectorAll('.service-content');
+
+  sectionTitles.forEach((title, index) => {
+    title.addEventListener('click', (event) => {
+      event.stopPropagation();
+      serviceLists.forEach((list, i) => {
+        list.classList.toggle('active', i === index && !list.classList.contains('active'));
+      });
+    });
+  });
+
+  document.addEventListener('click', () => {
+    serviceLists.forEach(list => list.classList.remove('active'));
+  });
 });
