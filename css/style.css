@@ -141,6 +141,13 @@ nav.nav-links a:hover {
   padding: 1rem;
 }
 
+#photo-gallery-grid img{
+  min-height: 300px;
+  max-height: 400px;
+  min-width: 300px;
+  
+}
+
 .contact_container {
   flex-direction: column;
   align-items: center;
@@ -228,6 +235,7 @@ footer {
   
   #photo-gallery img {
     width: 33.33%;
+    max-width: 300px;
   }
 }
 
