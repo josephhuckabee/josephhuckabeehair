@@ -7,19 +7,13 @@
 
 /* Global Styles */
 body {
-  font-family: "Merriweather Sans", sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   background-color: white;
   color: #231f20;
-  /* line-height: 1.6; */
 }
 
 img {
   max-width: 100%;
   height: auto;
-  display: block;
   object-fit: cover;
 }
 
@@ -73,10 +67,9 @@ h1 {
 
 .hero-card {
   text-align: center;
-  font-size: clamp(2rem, 8vw, 8rem);
-  font-weight: 900;
-  letter-spacing: 2px;
-  padding: 2rem 1rem;
+  font-size: clamp(4rem, 4vw, 8rem);
+  letter-spacing: 6px;
+  width: 100%;
   font-family: "Fjalla One", sans-serif;
   background-color: #231f20;
   color: whitesmoke;
@@ -96,12 +89,13 @@ h1 {
 
 nav.nav-links {
   display: none; /* Hide nav by default */
+  gap: 2rem;
+  font-size: 1.1rem;
+  color: black;
 }
 
 nav.nav-links a {
   text-decoration: none;
-  font-size: 1.1rem;
-  color: black;
 }
 
 nav.nav-links a:hover {
@@ -111,7 +105,7 @@ nav.nav-links a:hover {
 /* Hamburger Styling */
 .hamburger {
   display: none;
-  font-size: 2rem;
+  font-size: 2.5rem;
   background: none;
   border: none;
 }
@@ -119,7 +113,7 @@ nav.nav-links a:hover {
 /* Carousel and Gallery */
 .carousel-container {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
   position: relative;
   padding: 0 !important;
@@ -130,12 +124,6 @@ nav.nav-links a:hover {
   display: flex;
   height: 100%;
   transition: transform 0.3s ease-in-out;
-}
-
-.carousel img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 #photo-gallery-grid {
@@ -192,14 +180,12 @@ footer {
 @media (min-width: 900px) {
   nav.nav-links {
     display: flex !important;
-    gap: 2rem;
     justify-content: center;
   }
 }
 
 @media (max-width: 899px) {
   nav.nav-links {
-    display: none;
     flex-direction: column;
     align-items: center;
     background: white;
@@ -242,19 +228,12 @@ footer {
 
 /* Media Queries */
 @media (min-width: 628px) and (max-width: 899px) {
-  .carousel img {
-    height: 100vh;
-  }
   #photo-gallery img {
     width: 50%;
   }
 }
 
 @media (min-width: 900px) and (max-width: 1199px) {
-  .carousel img {
-    height: 100vh;
-  }
-
   #photo-gallery {
     margin-top: 120px;
   }
@@ -265,10 +244,6 @@ footer {
 }
 
 @media (min-width: 1200px) {
-  .carousel img {
-    height: 100vh;
-  }
-
   #photo-gallery img {
     width: 25%;
   }
@@ -282,11 +257,6 @@ body.index .carousel-container {
   overflow: hidden;
 }
 
-body.index .carousel img {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-}
 
 body.index main,
 body.index section {
@@ -368,7 +338,6 @@ body.index section {
 
 nav.nav-links {
   display: flex;
-  gap: 2rem;
 }
 
 nav.nav-links a {
@@ -394,7 +363,6 @@ nav.nav-links a:hover {
   }
 
   nav.nav-links {
-    flex-direction: column;
     position: absolute;
     top: 100%;
     right: 0;
@@ -415,4 +383,15 @@ nav.nav-links a:hover {
     border: none;
     color: #231f20;
   }
+}
+
+body.index .carousel-container img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  margin: auto;
 }
