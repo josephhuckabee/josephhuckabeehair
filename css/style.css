@@ -1,9 +1,25 @@
-/* Reset basic styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box; 
-  font-family: "Merriweather Sans";
+  font-family: "Merriweather Sans", sans-serif;
+}
+
+/* Global Styles */
+body {
+  background-color: white;
+  color: #231f20;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+main, section {
+  margin: 0 auto;
+  padding: 1rem;
 }
 
 /* Font Families */
@@ -26,13 +42,18 @@ a {
 }
 
 a:hover {
-  color: #0056b3;
-  font-size: 22px;
+  color: #ff66cc;
 }
 
 /* Text Styling */
 p {
   font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+.bio {
+  text-decoration: none;
+  color: blue;
+  padding: clamp(2px, 3vw, 25px);
 }
 
 h1 {
@@ -41,243 +62,325 @@ h1 {
   text-align: center;
   margin: 0;
   font-family: "Fjalla One", sans-serif;
+  color: whitesmoke;
+}
+
+.hero-card {
+  text-align: center;
+  font-size: clamp(3rem, 2vw, 6rem);
+  letter-spacing: 6px;
+  width: 100%;
+  font-family: "Fjalla One", sans-serif;
+  background-color: #231f20;
+  color: whitesmoke;
+  text-transform: uppercase;
 }
 
 /* Navigation Styling */
-nav {
-  width: 100%;
-  background-color: white;
-  padding: clamp(2px, 2vw, 15px);
-  text-align: center;
-  font-size: clamp(1rem, 2vw, 1.25rem);
-}
-
-nav a {
-  padding: clamp(1px, 2vw, 15px);
-  color:black;
-}
-
-nav a:hover {
-  color:#ff66cc;
-}
-
-/* Body Styling */
-body {
-  font-family: Arial, sans-serif;
-  color: #231f20;
-  background-color: white;
-  margin-top: clamp(10px, 10vh, 50px);
-}
-
-/* Header */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+.header-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: white;
+  width: 100%;
+  background-color: whitesmoke;
   z-index: 1000;
-  background-color: #231f20;
+  position: relative;
+}
+
+nav.nav-links {
+  display: none; /* Hide nav by default */
+  gap: 1rem;
+  font-size: 1rem;
+  color: black;
+}
+
+nav.nav-links a {
+  text-decoration: none;
+}
+
+nav.nav-links a:hover {
+  color: #ff66cc;
+}
+
+/* Hamburger Styling */
+.hamburger {
+  display: none;
+  font-size: 1rem;
+  background: none;
+  border: none;
 }
 
 /* Carousel and Gallery */
-.carousel-container {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 100vh;
-}
+
 
 .carousel {
   display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100%;
   transition: transform 0.3s ease-in-out;
 }
 
-.carousel img {
-  height: 100%;
-  width: auto;
-  object-fit: contain;
-  display: block;
+.carousel img{
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
 }
 
 #photo-gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 15px;
-  padding: 10px;
+  gap: 1rem;
+  padding: 3rem;
 }
 
-.photo img {
+.contact_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width:400px;
+  margin:auto;
+  border-style: solid;
+  padding: 1rem;
+}
+
+.services {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width:750px;
+  padding: 1rem;
+}
+
+.services section {
   width: 100%;
-  height: auto;
-  object-fit: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.services section ul.service-content {
   display: block;
 }
 
-/* Contact Container */
-.contactContainer1 {
-  width: 90vw;
-  text-align: center;
-  padding: 10px;
-  gap: 5vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  box-sizing: border-box;
-}
-
-.contactContainer1 img {
+/* Footer Styling */
+footer {
   width: 100%;
-  max-width: 600px;
-  object-fit: cover;
-  height: auto;
-}
-
-.contact_icons {
-  display: flex; /* Use flexbox layout */
-  justify-content: space-between; /* Equidistant spacing between icons */
-  align-items: center; /* Vertically center icons */
-  width: 90%; /* 90% of the parent width, adjust as needed */
-  margin: 120px auto 0; /* Add space from the header with margin-top (adjust as needed) */
-  border: 3px solid #000; /* Border around the container */
-  border-radius: 10px; /* Rounded corners */
-  box-sizing: border-box; 
-  font-size: 15px;
-}
-
-.prices {
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.prices section {
-  border-style: solid;
-  margin-bottom: 5%;
-  width: 80vw;
-  padding: 10px;
-}
-
-#contact_blurb {
-  background-color: black;
-  color: white;
-  padding: 10px;
-}
-
-#qr_code{
-  text-align: center;
- margin-top: 150px;
-  align-items: center;
-
-  
-}
-
-
-#qr_code img {
-  width: 100%;
-  max-width: 600px;
-  object-fit: cover;
-  height: auto;
-}
-#cost{
-  margin-top: 150px;  
-}
-
-
-#cost form{
-  margin-left: 25%;
-}
-form {
-  width: 100%;
-  max-width: 300px;
-  display: flex;
-  flex-direction: column;
-  gap:50px;
-  align-items: center; /* centers the form fields horizontally */
-  text-align: center;
- 
-}
-
-footer{
- margin-top: 800px;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: relative;
+  margin-top: -5rem;
+  z-index: 999;
 }
 
 /* Responsive Media Queries */
+/* Show nav on larger screens */
+@media (min-width: 900px) {
+  nav.nav-links {
+    display: flex !important;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 899px) {
+  nav.nav-links {
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    position: static;
+  }
+
+  nav.nav-links.active {
+    display: flex !important; /* Show nav when active on mobile */
+  }
+
+  nav.nav-links a {
+    padding: 0.75rem 1.5rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Responsive Styles */
 @media (max-width: 627px) {
   h1 {
     font-size: 42px;
   }
-#qr_code{
-  font-size: 23px;
-}
-  #photo-gallery {
-    margin-top: 80px;
-  }
-.carousel{
-  margin-top: 15px;
-}
-  .carousel img {
-    height: 90vh;
+
+  #qr_code {
+    font-size: 23px;
   }
 
-  .contact_icons img {
-    max-width: 80px;
-  }
-
-  .contactContainer1 {
-    flex-direction: column;
-    align-items: center;
+  #photo-gallery-grid img {
     width: 100%;
   }
-
- 
 }
 
-
+/* Media Queries */
 @media (min-width: 628px) and (max-width: 899px) {
-  .carousel img {
-    height: 80vh;
-  }
-
-  #photo-gallery {
-    margin-top: 100px;
-  }
-
   #photo-gallery img {
-    width: 48%;
+    width: 50%;
   }
 }
 
 @media (min-width: 900px) and (max-width: 1199px) {
-  .carousel img {
-    height: 80vh;
-    margin-top: 50px;
+  #photo-gallery {
+    margin-top: 120px;
   }
-
-#photo-gallery{
-  margin-top: 120px;
-}
+  
   #photo-gallery img {
     width: 33.33%;
-   
   }
 }
 
 @media (min-width: 1200px) {
-  .carousel img {
-    height: 80vh;
-  }
-
   #photo-gallery img {
-   width: 33.33%;
+    width: 25%;
   }
 }
+
+body.index .carousel-container {
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+
+body.index main,
+body.index section {
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+}
+
+.service_container{
+  border-style: solid;
+}
+.service-section-title {
+  text-align: center;
+  font-family: "Fjalla One", sans-serif;
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  margin: 1rem 0;
+}
+
+.service-content {
+  display: none;
+  text-align: left;
+  width: 100%;
+  max-width: 600px;
+}
+
+.service-content.active {
+  display: block;
+}
+
+.services section {
+  margin-bottom: 1.5rem;
+}
+
+.service-section-title {
+  cursor: pointer;
+  position: relative;
+  padding-right: 1.5rem;
+}
+
+.service-section-title::after {
+  content: '▾';
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.service-section-title.open::after {
+  transform: rotate(180deg);
+}
+
+/* Modern Header Styling */
+.modern-header {
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.75rem;
+  font-family: "Fjalla One", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #231f20;
+}
+
+nav.nav-links {
+  display: flex;
+}
+
+nav.nav-links a {
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #231f20;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+nav.nav-links a:hover {
+  color: #ff66cc;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 899px) {
+  .header-inner {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  nav.nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    width: 100%;
+    display: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  nav.nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #231f20;
+  }
+}
+
