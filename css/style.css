@@ -175,11 +175,10 @@ header {
 }
 
 #qr_code{
+  margin-top: 100px;
+  margin-bottom: 50px;
   text-align: center;
- margin-top: 150px;
   align-items: center;
-
-  
 }
 
 
@@ -189,8 +188,12 @@ header {
   object-fit: cover;
   height: auto;
 }
-#cost{
-  margin-top: 150px;  
+#signup{
+ 
+  border-style: solid;
+ padding: 5%;
+  max-width: 330px;
+
 }
 
 
@@ -202,14 +205,15 @@ form {
   max-width: 300px;
   display: flex;
   flex-direction: column;
-  gap:50px;
   align-items: center; /* centers the form fields horizontally */
   text-align: center;
- 
+ padding: 10px;
 }
 
 footer{
- margin-top: 800px;
+ margin-top: 100px;
+ align-items: center;
+ padding: 1%;
 }
 
 /* Responsive Media Queries */
