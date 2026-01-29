@@ -1,60 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>Contact</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Contact</title>
 </head>
-<body>
-    <header>
-        <h1>Joseph Huckabee</h1>
-        <nav>
-            <a href="index.html" id="portLink">Home</a>
-            <a href="portfolio.html" id="portLink">Portfolio</a>
-            <a href="services.html" id="portLink">Services</a>
-            <a href="contact.html" id="portLink">Appointments</a>
-        </nav>
-    </header>
-<main>
-    <center>
-        <br><br>   <a href="https://www.joinblvd.com/b/benjamin-salon/widget#/locations" target="_blank
-"> <h3><img src='benjamin.png' width="300" height="200"><br><br><h3>Book your next appotinment here</h3></a>
+<body class="contact-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <h1>Joseph Huckabee</h1>
+    <nav aria-label="Primary">
+      <div class="nav-links">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="portfolio.html">Portfolio</a>
+        <a class="nav-link" href="services.html">Services</a>
+        <a class="nav-link" href="contact.html" aria-current="page">Appointments</a>
+      </div>
+    </nav>
+  </header>
 
-    <div id="signup">
-        Thanks for your continued support. <br><br>
-        Please sign up for my monthly newsletter to stay up to date with trends, products, discounts and more!
-  <br><br>
-   <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="contact" />
-  
-        <p hidden>
-            <label>Don’t fill this out: <input name="bot-field" /></label>
+  <main id="main" class="page center">
+    <section class="card booking-card">
+      <a href="https://www.joinblvd.com/b/benjamin-salon/widget#/locations" target="_blank" rel="noopener noreferrer">
+        <center><img src="images/benjamin.png" width="300" height="200" alt="Benjamin Salon booking" loading="eager" decoding="async"></center>
+        <h2>Book your next appointment</h2>
+      </a>
+    </section>
+
+    <section id="signup" class="card">
+      <p>Thanks for your continued support.</p>
+      <p>Please sign up for my monthly newsletter to stay up to date with trends, products, discounts and more!</p>
+
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+
+        <p class="visually-hidden">
+          <label>Don’t fill this out: <input name="bot-field"></label>
         </p>
 
-        <input type="text" name="name" placeholder="Your First & Last Name" required />
-      <br>  <input type="email" name="email" placeholder="Your Email" required />
-      <br>   <textarea name="message" placeholder="Your Message"></textarea>
-      <br>  
+        <label class="visually-hidden" for="contact-name">Full name</label>
+        <input id="contact-name" type="text" name="name" placeholder="Your First & Last Name" autocomplete="name" required>
+
+        <label class="visually-hidden" for="contact-email">Email</label>
+        <input id="contact-email" type="email" name="email" placeholder="Your Email" autocomplete="email" required>
+
+        <label class="visually-hidden" for="contact-message">Message</label>
+        <textarea id="contact-message" name="message" placeholder="Your Message" rows="4"></textarea>
+
         <button type="submit">Sign Up</button>
-        <br>   No Spam! Swear! 
-    </form>
-</div> 
+        <p>No spam. Swear!</p>
+      </form>
+    </section>
+  </main>
 
-</main>
-</center>
+  <footer class="site-footer">
+    <p>
+      © 2025 Joseph Huckabee. All rights reserved.
+      All images and content on this site are the exclusive property of Joseph Huckabee
+      and may not be copied, reproduced, shared, edited, or used in any form without
+      express written permission.
+    </p>
+  </footer>
 </body>
-    <footer>
-        <p style="font-size: 0.8rem; color: #777;">
-          © 2025 Joseph Huckabee. All rights reserved. 
-          All images and content on this site are the exclusive property of Joseph Huckabee 
-          and may not be copied, reproduced, shared, edited, or used in any form without 
-          express written permission.
-        </p>
-      
-</footer>
-
-
 </html>

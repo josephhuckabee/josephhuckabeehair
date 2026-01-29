@@ -1,40 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css">
-     <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
- <title>Joseph Huckabee</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Joseph Huckabee</title>
 </head>
-<body>
-    <header>
-        <h1>Joseph Huckabee</h1>
-        <nav>
-            <a href="index.html" id="portLink">Home</a>
-            <a href="portfolio.html" id="portLink">Portfolio</a>
-            <a href="services.html" id="portLink">Services</a>
-            <a href="contact.html" id="portLink">Appointments</a>
-        </nav>
-    </header>
+<body class="home">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <h1>Joseph Huckabee</h1>
+    <nav aria-label="Primary">
+      <div class="nav-links">
+        <a class="nav-link" href="index.html" aria-current="page">Home</a>
+        <a class="nav-link" href="portfolio.html">Portfolio</a>
+        <a class="nav-link" href="services.html">Services</a>
+        <a class="nav-link" href="contact.html">Appointments</a>
+      </div>
+    </nav>
+  </header>
 
-    <section class="carousel">
-        <div class="carousel-container">
-            <div class="carousel" id="carousel"></div>
-        </div>
+  <main id="main">
+    <section class="carousel-section" aria-label="Featured work">
+      <div class="carousel-container">
+        <div class="carousel" id="carousel"></div>
+      </div>
     </section>
+  </main>
 
-    <script src="/js/script.js"></script>
-
-</body>
-<footer>
-    <p style="font-size: 0.8rem; color: #777;">
-      © 2025 Joseph Huckabee. All rights reserved. 
-      All images and content on this site are the exclusive property of Joseph Huckabee 
-      and may not be copied, reproduced, shared, edited, or used in any form without 
+  <footer class="site-footer">
+    <p>
+      © 2025 Joseph Huckabee. All rights reserved.
+      All images and content on this site are the exclusive property of Joseph Huckabee
+      and may not be copied, reproduced, shared, edited, or used in any form without
       express written permission.
     </p>
   </footer>
- 
+
+  <script src="js/script.js" defer></script>
+</body>
 </html>

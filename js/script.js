@@ -1,55 +1,97 @@
-// ------------------------------------------------------------------------
-// JAVASCRIPT 2/3 | Carousel Scroll ----------------------------------------
-// ------------------------------------------------------------------------
-
-// Step 1: Just the image filenames (clean and simple)
-const filenames = [
-  'sam.jpeg', 'sage1.jpeg', 'angel2.webp', 'taylore_bed.jpeg', 'quinuse.jpg', 
-  'jade.jpeg', 'lean_style.png', 'morg_sit.png', 'julian.jpeg', 
-  'lucy.jpeg', 'hugs.jpeg', 'xiana.jpg', 'em_hands.png', 
-  'kyblonde.jpeg', 'nour.jpeg', 'quinn.jpeg', 'jazelle.jpg', 'mckenna.png'
-];
-
-// Step 2: Automatically add "images/" in front of each filename
-const images = filenames.map(name => `/images/${name}`);
-
-// Step 3: Get the carousel container
+// Carousel scroll with reduced motion and visibility handling.
 const carousel = document.getElementById('carousel');
 
-// Step 4: Add images to the carousel dynamically
-images.forEach((src) => {
-  const img = document.createElement('img');
-  img.src = src;
-  img.alt = 'Carousel Image';
-  carousel.appendChild(img);
-});
+if (carousel) {
+  const slides = [
+    { file: 'sam.jpeg', width: 1206, height: 1504, alt: 'Hair color and cut on Sam' },
+    { file: 'sage1.jpeg', width: 1170, height: 1458, alt: 'Hair color and cut on Sage' },
+    { file: 'angel2.webp', width: 1570, height: 2048, alt: 'Hair color and cut on Angel' },
+    { file: 'taylore_bed.jpeg', width: 1206, height: 1501, alt: 'Hair color and cut on Taylore' },
+    { file: 'quinuse.jpg', width: 1189, height: 1480, alt: 'Hair color and cut on Quin' },
+    { file: 'jade.jpeg', width: 1206, height: 1372, alt: 'Hair color and cut on Jade' },
+    { file: 'lean_style.png', width: 1256, height: 1756, alt: 'Hair color and cut on Lean' },
+    { file: 'morg_sit.png', width: 1226, height: 1828, alt: 'Hair color and cut on Morgan' },
+    { file: 'julian.jpeg', width: 1170, height: 1467, alt: 'Hair color and cut on Julian' },
+    { file: 'lucy.jpeg', width: 1170, height: 1445, alt: 'Hair color and cut on Lucy' },
+    { file: 'hugs.jpeg', width: 1206, height: 1482, alt: 'Hair color and cut on Hugs' },
+    { file: 'xiana.jpg', width: 800, height: 1101, alt: 'Hair color and cut on Xiana' },
+    { file: 'em_hands.png', width: 1280, height: 1702, alt: 'Hair color and cut on Em' },
+    { file: 'kyblonde.jpeg', width: 1206, height: 1213, alt: 'Hair color and cut on Ky' },
+    { file: 'nour.jpeg', width: 1206, height: 1493, alt: 'Hair color and cut on Nour' },
+    { file: 'quinn.jpeg', width: 1206, height: 1262, alt: 'Hair color and cut on Quinn' },
+    { file: 'jazelle.JPG', width: 960, height: 1281, alt: 'Hair color and cut on Jazelle' },
+    { file: 'mckenna.png', width: 1562, height: 1994, alt: 'Hair color and cut on Mckenna' }
+  ];
 
-// Step 5: Clone images for a seamless loop
-images.forEach((src) => {
-  const img = document.createElement('img');
-  img.src = src;
-  img.alt = 'Carousel Image Clone';
-  carousel.appendChild(img);
-});
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let position = 0;
+  let loopWidth = 0;
+  let rafId = null;
+  const scrollSpeed = 0.8;
 
-// Step 6: Set initial position and scroll speed
-let position = 0;
-const scrollSpeed = 1.25; // Adjust this for desired scrolling speed
+  const createImage = (slide, index, isClone = false) => {
+    const img = document.createElement('img');
+    img.src = `images/${slide.file}`;
+    img.alt = isClone ? `${slide.alt} (duplicate)` : slide.alt;
+    img.width = slide.width;
+    img.height = slide.height;
+    img.loading = index === 0 && !isClone ? 'eager' : 'lazy';
+    img.decoding = 'async';
+    if (index === 0 && !isClone) {
+      img.fetchPriority = 'high';
+    }
+    return img;
+  };
 
-// Step 7: Function for smooth continuous scroll
-function continuousScroll() {
-  position -= scrollSpeed;
-  carousel.style.transform = `translateX(${position}px)`; // Move the carousel left
+  const shuffled = [...slides].sort(() => Math.random() - 0.5);
 
-  const totalWidth = carousel.scrollWidth / 4; // Adjust as needed
+  shuffled.forEach((slide, index) => {
+    carousel.appendChild(createImage(slide, index));
+  });
 
-  if (Math.abs(position) >= totalWidth) {
-    position = 0; // Reset for seamless loop
-  }
+  shuffled.forEach((slide, index) => {
+    carousel.appendChild(createImage(slide, index, true));
+  });
 
-  requestAnimationFrame(continuousScroll);
+  const updateLoopWidth = () => {
+    loopWidth = carousel.scrollWidth / 2;
+  };
+
+  const tick = () => {
+    if (!loopWidth) {
+      updateLoopWidth();
+    }
+
+    position -= scrollSpeed;
+    if (Math.abs(position) >= loopWidth && loopWidth > 0) {
+      position = 0;
+    }
+    carousel.style.transform = `translateX(${position}px)`;
+    rafId = requestAnimationFrame(tick);
+  };
+
+  const start = () => {
+    if (!prefersReducedMotion && rafId === null) {
+      rafId = requestAnimationFrame(tick);
+    }
+  };
+
+  const stop = () => {
+    if (rafId !== null) {
+      cancelAnimationFrame(rafId);
+      rafId = null;
+    }
+  };
+
+  window.addEventListener('resize', updateLoopWidth);
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      stop();
+    } else {
+      start();
+    }
+  });
+
+  updateLoopWidth();
+  start();
 }
-
-// Start the carousel scroll
-continuousScroll();
-

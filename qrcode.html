@@ -1,88 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
-    <title>JH - Contact</title>
-    <link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>JH - Quick Links</title>
 </head>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css">
-</head>
-<center> 
-    <header>
-        <h1>Joseph Huckabee</h1>
-    </header>
-    </center>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <h1>Joseph Huckabee</h1>
+    <nav aria-label="Primary">
+      <div class="nav-links">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="portfolio.html">Portfolio</a>
+        <a class="nav-link" href="services.html">Services</a>
+        <a class="nav-link" href="contact.html">Appointments</a>
+      </div>
+    </nav>
+  </header>
 
+  <main id="main" class="page center">
+    <section id="qr_code">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="https://www.instagram.com/josephhuckabee/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="mailto:info@josephhuckabee.com">Email</a>
+      <a href="https://www.joinblvd.com/b/benjamin-salon/widget#/locations" target="_blank" rel="noopener noreferrer">Book your next appointment</a>
+    </section>
 
-<!-- --------------------------END.HEADER----------------------------- -->
-<main>
-    <center>
- <div id="qr_code">
-    <a href="portfolio.html">Portfolio</a><br><br>
-    <a href="https://www.instagram.com/josephhuckabee/">Instagram</a><br><br>
-    <a href="mailto:info@josephhuckabee.com">
-        Email
-         </a><br><br>
- <a href="https://www.joinblvd.com/b/benjamin-salon/widget#/locations" target="_blank">
-  Book your next appointment
- </a>
-  
-</div>
-<div id="signup">
-    Thanks for your continued support. <br><br>
-    Please sign up for my monthly newsletter to stay up to date with trends, products, discounts and more!
-<br><br>
-<form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-    <input type="hidden" name="form-name" value="contact" />
+    <section id="signup">
+      <p>Thanks for your continued support.</p>
+      <p>Please sign up for my monthly newsletter to stay up to date with trends, products, discounts and more!</p>
 
-    <p hidden>
-        <label>Don’t fill this out: <input name="bot-field" /></label>
-    </p>
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
 
-    <input type="text" name="name" placeholder="Your First & Last Name" required />
-  <br>  <input type="email" name="email" placeholder="Your Email" required />
-  <br>  <textarea name="message" placeholder="Your Message"></textarea>
-    <br>
-    <button type="submit">Sign Up</button>
-  <br>  No Spam! Swear! 
-</form>
-</div> 
-</main>
-</center>
+        <p class="visually-hidden">
+          <label>Don’t fill this out: <input name="bot-field"></label>
+        </p>
 
-<!-- --------------------------END.BIO.HERO----------------------------- -->
-<!-- --------------------------HEADSHOT.HERO----------------------------- -->
+        <label class="visually-hidden" for="qr-name">Full name</label>
+        <input id="qr-name" type="text" name="name" placeholder="Your First & Last Name" autocomplete="name" required>
 
+        <label class="visually-hidden" for="qr-email">Email</label>
+        <input id="qr-email" type="email" name="email" placeholder="Your Email" autocomplete="email" required>
 
-<!-- --------------------------CONTACT----------------------------- -->
+        <label class="visually-hidden" for="qr-message">Message</label>
+        <textarea id="qr-message" name="message" placeholder="Your Message" rows="4"></textarea>
 
-  
+        <button type="submit">Sign Up</button>
+        <p>No spam. Swear!</p>
+      </form>
+    </section>
+  </main>
 
-
-
-
-<!-- --------------------------JS TAG----------------------------- -->
- <script src="/js/script.js"></script>
- <!-- --------------------------END BODY----------------------------- -->
-</body>
-<!-- --------------------------FOOTER----------------------------- -->
- <footer>
-    <p style="font-size: 0.8rem; color: #777;">
-      © 2025 Joseph Huckabee. All rights reserved. 
-      All images and content on this site are the exclusive property of Joseph Huckabee 
-      and may not be copied, reproduced, shared, edited, or used in any form without 
+  <footer class="site-footer">
+    <p>
+      © 2025 Joseph Huckabee. All rights reserved.
+      All images and content on this site are the exclusive property of Joseph Huckabee
+      and may not be copied, reproduced, shared, edited, or used in any form without
       express written permission.
     </p>
   </footer>
-
- <!-- --------------------------END FOOTER----------------------------- -->
- <!-- --------------------------END HTML----------------------------- -->
+</body>
 </html>
