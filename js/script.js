@@ -1,5 +1,6 @@
-// Carousel scroll with reduced motion and visibility handling.
+// Carousel scroll with reduced motion, responsive images, and visibility handling.
 const carousel = document.getElementById('carousel');
+const carouselContainer = document.querySelector('.carousel-container');
 
 if (carousel) {
   const slides = [
@@ -27,23 +28,60 @@ if (carousel) {
   let position = 0;
   let loopWidth = 0;
   let rafId = null;
-  const scrollSpeed = 0.8;
+  let isPaused = false;
+  const scrollSpeed = window.matchMedia('(max-width: 599px)').matches ? 0.45 : 0.7;
 
   const createImage = (slide, index, isClone = false) => {
     const img = document.createElement('img');
-    img.src = `images/${slide.file}`;
-    img.alt = isClone ? `${slide.alt} (duplicate)` : slide.alt;
+    const imageName = slide.file.replace(/\.[^.]+$/, '');
+
+    img.src = `images/optimized/${imageName}-960.jpg`;
+    img.srcset = [
+      `images/optimized/${imageName}-480.jpg 480w`,
+      `images/optimized/${imageName}-960.jpg 960w`,
+      `images/optimized/${imageName}-1440.jpg 1440w`
+    ].join(', ');
+    img.sizes = '(max-width: 599px) 76vw, (max-width: 1199px) 42vw, 32vw';
+    img.alt = isClone ? '' : slide.alt;
     img.width = slide.width;
     img.height = slide.height;
-    img.loading = index === 0 && !isClone ? 'eager' : 'lazy';
+    img.loading = index < 2 && !isClone ? 'eager' : 'lazy';
     img.decoding = 'async';
-    if (index === 0 && !isClone) {
+    if (index < 2 && !isClone) {
       img.fetchPriority = 'high';
+    }
+    if (isClone) {
+      img.setAttribute('aria-hidden', 'true');
     }
     return img;
   };
 
-  const shuffled = [...slides].sort(() => Math.random() - 0.5);
+  const shuffled = slides;
+
+  if (carouselContainer && !prefersReducedMotion) {
+    const pauseButton = document.createElement('button');
+    pauseButton.className = 'carousel-pause';
+    pauseButton.type = 'button';
+    pauseButton.setAttribute('aria-label', 'Pause carousel');
+    pauseButton.setAttribute('aria-pressed', 'false');
+    pauseButton.innerHTML = '<span class="visually-hidden">Pause carousel</span><span class="pause-icon" aria-hidden="true"></span>';
+
+    pauseButton.addEventListener('click', () => {
+      isPaused = !isPaused;
+      pauseButton.classList.toggle('is-paused', isPaused);
+      pauseButton.setAttribute('aria-label', isPaused ? 'Resume carousel' : 'Pause carousel');
+      pauseButton.setAttribute('aria-pressed', isPaused ? 'true' : 'false');
+      pauseButton.querySelector('.visually-hidden').textContent = isPaused ? 'Resume carousel' : 'Pause carousel';
+
+      if (isPaused) {
+        stop();
+      } else {
+        start();
+      }
+    });
+
+    carouselContainer.appendChild(pauseButton);
+  }
 
   shuffled.forEach((slide, index) => {
     carousel.appendChild(createImage(slide, index));
@@ -71,7 +109,7 @@ if (carousel) {
   };
 
   const start = () => {
-    if (!prefersReducedMotion && rafId === null) {
+    if (!prefersReducedMotion && !isPaused && rafId === null) {
       rafId = requestAnimationFrame(tick);
     }
   };
@@ -83,7 +121,12 @@ if (carousel) {
     }
   };
 
-  window.addEventListener('resize', updateLoopWidth);
+  const handleResize = () => {
+    updateLoopWidth();
+    position = Math.min(0, position);
+  };
+
+  window.addEventListener('resize', handleResize);
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
       stop();
