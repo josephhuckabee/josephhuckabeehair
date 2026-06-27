@@ -214,11 +214,14 @@ if (gallery) {
     return src.replace('-480.jpg', '-1440.jpg').replace('-960.jpg', '-1440.jpg');
   };
 
+  const getPortfolioName = (img) => img.alt.replace(/^Editorial hair color on\s+/i, '').trim();
+
   const openLightbox = (img) => {
     activeTrigger = img;
+    const portfolioName = getPortfolioName(img);
     lightboxImage.src = getLargeImage(img);
     lightboxImage.alt = img.alt;
-    lightboxCaption.textContent = img.alt;
+    lightboxCaption.textContent = portfolioName;
     lightbox.classList.add('is-open');
     document.body.classList.add('lightbox-open');
     closeButton.focus();
@@ -237,7 +240,7 @@ if (gallery) {
   galleryImages.forEach((img) => {
     img.tabIndex = 0;
     img.setAttribute('role', 'button');
-    img.setAttribute('aria-label', `Open large view: ${img.alt}`);
+    img.setAttribute('aria-label', `Open large view: ${getPortfolioName(img)}`);
     img.setAttribute('title', 'Open large view');
 
     img.addEventListener('click', () => openLightbox(img));
