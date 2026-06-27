@@ -4,24 +4,24 @@ const carouselContainer = document.querySelector('.carousel-container');
 
 if (carousel) {
   const slides = [
-    { file: 'sam.jpeg', width: 1206, height: 1504, alt: 'Hair color and cut on Sam' },
-    { file: 'sage1.jpeg', width: 1170, height: 1458, alt: 'Hair color and cut on Sage' },
-    { file: 'angel2.webp', width: 1570, height: 2048, alt: 'Hair color and cut on Angel' },
-    { file: 'taylore_bed.jpeg', width: 1206, height: 1501, alt: 'Hair color and cut on Taylore' },
-    { file: 'quinuse.jpg', width: 1189, height: 1480, alt: 'Hair color and cut on Quin' },
-    { file: 'jade.jpeg', width: 1206, height: 1372, alt: 'Hair color and cut on Jade' },
-    { file: 'lean_style.png', width: 1256, height: 1756, alt: 'Hair color and cut on Lean' },
-    { file: 'morg_sit.png', width: 1226, height: 1828, alt: 'Hair color and cut on Morgan' },
-    { file: 'julian.jpeg', width: 1170, height: 1467, alt: 'Hair color and cut on Julian' },
-    { file: 'lucy.jpeg', width: 1170, height: 1445, alt: 'Hair color and cut on Lucy' },
-    { file: 'hugs.jpeg', width: 1206, height: 1482, alt: 'Hair color and cut on Hugs' },
-    { file: 'xiana.jpg', width: 800, height: 1101, alt: 'Hair color and cut on Xiana' },
-    { file: 'em_hands.png', width: 1280, height: 1702, alt: 'Hair color and cut on Em' },
-    { file: 'kyblonde.jpeg', width: 1206, height: 1213, alt: 'Hair color and cut on Ky' },
-    { file: 'nour.jpeg', width: 1206, height: 1493, alt: 'Hair color and cut on Nour' },
-    { file: 'quinn.jpeg', width: 1206, height: 1262, alt: 'Hair color and cut on Quinn' },
-    { file: 'jazelle.JPG', width: 960, height: 1281, alt: 'Hair color and cut on Jazelle' },
-    { file: 'mckenna.png', width: 1562, height: 1994, alt: 'Hair color and cut on Mckenna' }
+    { file: 'sam.jpeg', width: 1206, height: 1504, alt: 'Editorial hair color on Sam' },
+    { file: 'sage1.jpeg', width: 1170, height: 1458, alt: 'Editorial hair color on Sage' },
+    { file: 'angel2.webp', width: 1570, height: 2048, alt: 'Editorial hair color on Angel' },
+    { file: 'taylore_bed.jpeg', width: 1206, height: 1501, alt: 'Editorial hair color on Taylore' },
+    { file: 'quinuse.jpg', width: 1189, height: 1480, alt: 'Editorial hair color on Quin' },
+    { file: 'jade.jpeg', width: 1206, height: 1372, alt: 'Editorial hair color on Jade' },
+    { file: 'lean_style.png', width: 1256, height: 1756, alt: 'Editorial hair color on Lean' },
+    { file: 'morg_sit.png', width: 1226, height: 1828, alt: 'Editorial hair color on Morgan' },
+    { file: 'julian.jpeg', width: 1170, height: 1467, alt: 'Editorial hair color on Julian' },
+    { file: 'lucy.jpeg', width: 1170, height: 1445, alt: 'Editorial hair color on Lucy' },
+    { file: 'hugs.jpeg', width: 1206, height: 1482, alt: 'Editorial hair color on Hugs' },
+    { file: 'xiana.jpg', width: 800, height: 1101, alt: 'Editorial hair color on Xiana' },
+    { file: 'em_hands.png', width: 1280, height: 1702, alt: 'Editorial hair color on Em' },
+    { file: 'kyblonde.jpeg', width: 1206, height: 1213, alt: 'Editorial hair color on Ky' },
+    { file: 'nour.jpeg', width: 1206, height: 1493, alt: 'Editorial hair color on Nour' },
+    { file: 'quinn.jpeg', width: 1206, height: 1262, alt: 'Editorial hair color on Quinn' },
+    { file: 'jazelle.JPG', width: 960, height: 1281, alt: 'Editorial hair color on Jazelle' },
+    { file: 'mckenna.png', width: 1562, height: 1994, alt: 'Editorial hair color on Mckenna' }
   ];
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
