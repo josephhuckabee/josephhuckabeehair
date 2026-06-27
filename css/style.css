@@ -377,7 +377,7 @@ main {
   display: grid;
   align-items: end;
   padding: clamp(80px, 16vh, 160px) 20px var(--space-5);
-  background: var(--color-ink);
+  background: var(--color-bg);
   color: #fff;
   overflow: hidden;
   isolation: isolate;
@@ -500,9 +500,11 @@ main {
 }
 
 .hero-carousel #carousel img {
-  width: auto;
-  min-width: 26vw;
+  flex: 0 0 clamp(420px, 34vw, 560px);
+  width: clamp(420px, 34vw, 560px);
+  min-width: clamp(420px, 34vw, 560px);
   filter: none;
+  object-position: center 22%;
 }
 
 #carousel {
@@ -516,7 +518,6 @@ main {
 
 #carousel img {
   height: 100%;
-  width: auto;
   object-fit: cover;
   display: block;
   margin: 0;
@@ -1076,29 +1077,21 @@ button:hover {
 
 @media (max-width: 560px) {
   body.home {
-    height: 100svh;
-    min-height: 100svh;
-    background: #0f0d0b;
-    overflow: hidden;
+    min-height: 100dvh;
+    background: var(--color-bg);
+    overflow-x: hidden;
   }
 
   .home main {
     flex: 1;
-    min-height: 0;
-    background: #0f0d0b;
-    overflow: hidden;
+    min-height: calc(100dvh - 98px);
+    background: var(--color-bg);
+    overflow: visible;
   }
 
   body.home::after {
-    content: "";
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 0;
-    height: max(28px, env(safe-area-inset-bottom));
-    background: #0f0d0b;
-    pointer-events: none;
+    display: none;
+    content: none;
   }
 
   .home .site-footer {
@@ -1242,10 +1235,10 @@ button:hover {
   }
 
   .hero {
-    min-height: 0;
-    height: 100%;
+    min-height: calc(100dvh - 98px);
+    height: auto;
     align-items: end;
-    padding: 26svh 20px 18px;
+    padding: 26dvh 20px calc(18px + env(safe-area-inset-bottom));
   }
 
   .hero-copy {
@@ -1311,6 +1304,23 @@ button:hover {
     background:
       linear-gradient(90deg, rgba(23, 21, 18, 0.62), rgba(23, 21, 18, 0.24)),
       linear-gradient(0deg, rgba(23, 21, 18, 0.34), rgba(23, 21, 18, 0) 58%);
+  }
+}
+
+@media (min-width: 561px) and (max-width: 699px) {
+  .hero-carousel #carousel img {
+    flex: 0 0 100vw;
+    width: 100vw;
+    min-width: 100vw;
+    object-position: center center;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1199px) {
+  .hero-carousel #carousel img {
+    flex: 0 0 clamp(420px, 42vw, 520px);
+    width: clamp(420px, 42vw, 520px);
+    min-width: clamp(420px, 42vw, 520px);
   }
 }
 

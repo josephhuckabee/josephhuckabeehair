@@ -41,7 +41,7 @@ if (carousel) {
       `images/optimized/${imageName}-960.jpg 960w`,
       `images/optimized/${imageName}-1440.jpg 1440w`
     ].join(', ');
-    img.sizes = '(max-width: 599px) 100vw, (max-width: 1199px) 42vw, 32vw';
+    img.sizes = '(max-width: 699px) 100vw, (max-width: 1199px) 42vw, 34vw';
     img.alt = isClone ? '' : slide.alt;
     img.width = slide.width;
     img.height = slide.height;
