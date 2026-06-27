@@ -446,7 +446,7 @@ main {
 
 .hero h2 {
   margin-bottom: var(--space-3);
-  font-size: clamp(2.6rem, 11vw, 6.5rem);
+  font-size: clamp(1.5rem, 8vw, 4.24rem);
   max-width: 820px;
 }
 
