@@ -196,9 +196,9 @@ main {
   width: 44px;
   height: 44px;
   padding: 0;
-  border-radius: var(--radius);
+  border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.24);
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.06);
   color: var(--color-surface);
   cursor: pointer;
   align-items: center;
@@ -210,6 +210,7 @@ main {
 .nav-toggle-bar {
   width: 19px;
   height: 2px;
+  border-radius: 999px;
   background: currentColor;
   display: block;
 }
@@ -994,6 +995,62 @@ button:hover {
 }
 
 @media (max-width: 560px) {
+  body.home {
+    height: 100svh;
+    min-height: 100svh;
+    overflow: hidden;
+  }
+
+  .home main {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .home .site-footer {
+    display: none;
+  }
+
+  .site-header {
+    position: sticky;
+    min-height: 98px;
+  }
+
+  .site-header h1 {
+    position: absolute;
+    top: 31px;
+    left: 50%;
+    max-width: calc(100% - 112px);
+    text-align: center;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+
+  .nav-toggle {
+    width: 54px;
+    height: 44px;
+    border-color: rgba(247, 168, 200, 0.44);
+    border-radius: 999px;
+    background: rgba(255, 240, 245, 0.08);
+    color: #ffd7e6;
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+      0 10px 24px rgba(0, 0, 0, 0.18);
+    justify-self: end;
+  }
+
+  .nav-toggle-bar {
+    width: 19px;
+  }
+
+  .nav-toggle-bar:nth-of-type(2) {
+    width: 15px;
+  }
+
+  .nav-toggle-bar:nth-of-type(3) {
+    width: 17px;
+  }
+
   .hero-actions,
   .button,
   .cta-button {
@@ -1078,7 +1135,69 @@ button:hover {
   }
 
   .hero {
-    min-height: 680px;
+    min-height: 0;
+    height: 100%;
+    align-items: end;
+    padding: 26svh 20px 18px;
+  }
+
+  .hero-copy {
+    width: min(230px, 100%);
+    margin-left: 0;
+    margin-right: auto;
+    text-align: left;
+  }
+
+  .hero .eyebrow {
+    font-size: 0.46rem;
+    margin-bottom: 6px;
+  }
+
+  .hero h2 {
+    max-width: 230px;
+    margin-bottom: 8px;
+    font-size: clamp(1.16rem, 6.25vw, 1.64rem);
+  }
+
+  .hero p:not(.eyebrow) {
+    max-width: 226px;
+    font-size: 0.6rem;
+    line-height: 1.3;
+  }
+
+  .hero-actions {
+    gap: 7px;
+    margin-top: 10px;
+  }
+
+  .hero-actions .button {
+    min-height: 36px;
+    padding: 8px 12px;
+    font-size: 0.68rem;
+  }
+
+  .hero-carousel .carousel-pause {
+    top: 14px;
+    right: 14px;
+    bottom: auto;
+    width: 38px;
+    height: 38px;
+    min-height: 38px;
+    border-radius: 14px;
+    background: rgba(23, 21, 18, 0.54);
+    backdrop-filter: blur(8px);
+  }
+
+  .hero-carousel .pause-icon {
+    transform: scale(0.78);
+  }
+
+  .hero-carousel #carousel img {
+    flex: 0 0 100vw;
+    width: 100vw;
+    min-width: 100vw;
+    object-fit: cover;
+    object-position: center center;
   }
 
   .hero::after {
