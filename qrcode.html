@@ -28,9 +28,13 @@
         <a class="nav-link" href="index.html">Home</a>
         <a class="nav-link" href="portfolio.html">Portfolio</a>
         <a class="nav-link" href="services.html">Color Services</a>
-        <a class="nav-link" href="contact.html">Appointments</a>
-        <a class="nav-link nav-link-social" href="https://www.instagram.com/josephhuckabee/" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a class="nav-link nav-link-social" href="https://www.tiktok.com/@josephhuckabee" target="_blank" rel="noopener noreferrer">TikTok</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+        <a class="nav-link nav-link-social" href="https://www.instagram.com/josephhuckabee/" target="_blank" rel="noopener noreferrer" aria-label="Instagram @josephhuckabee">
+          <img class="social-icon" src="images/newig.png" alt="" width="24" height="24" loading="lazy" decoding="async">
+        </a>
+        <a class="nav-link nav-link-social" href="https://www.tiktok.com/@josephhuckabee" target="_blank" rel="noopener noreferrer" aria-label="TikTok @josephhuckabee">
+          <img class="social-icon" src="images/tiktok-icon-64.png" alt="" width="24" height="24" loading="lazy" decoding="async">
+        </a>
       </div>
     </nav>
   </header>
@@ -38,21 +42,21 @@
   <main id="main" class="page center">
     <section id="qr_code">
       <a href="portfolio.html">Portfolio</a>
-      <a href="https://www.instagram.com/josephhuckabee/" target="_blank" rel="noopener noreferrer">Instagram @josephhuckabee</a>
-      <a href="https://www.tiktok.com/@josephhuckabee" target="_blank" rel="noopener noreferrer">TikTok @josephhuckabee</a>
+      <a href="https://www.instagram.com/josephhuckabee/" target="_blank" rel="noopener noreferrer" aria-label="Instagram @josephhuckabee"><img class="social-icon" src="images/newig.png" alt="" width="24" height="24" loading="lazy" decoding="async"> @josephhuckabee</a>
+      <a href="https://www.tiktok.com/@josephhuckabee" target="_blank" rel="noopener noreferrer" aria-label="TikTok @josephhuckabee"><img class="social-icon" src="images/tiktok-icon-64.png" alt="" width="24" height="24" loading="lazy" decoding="async"> @josephhuckabee</a>
       <a href="mailto:info@josephhuckabee.com">Email</a>
-      <a href="https://www.joinblvd.com/b/benjamin-salon/widget#/locations" target="_blank" rel="noopener noreferrer">Book your next appointment</a>
+      <a href="contact.html">Contact</a>
     </section>
 
     <section id="signup">
       <h2>Hair Notes</h2>
-      <p>Join the mailing list for color care guidance, service updates, product recommendations, and appointment availability.</p>
+      <p>Join the mailing list for color care guidance, service updates, product recommendations, and occasional notes from Joseph.</p>
 
-      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="contact">
+      <form name="color-notes-quick-links" method="POST" action="success.html" accept-charset="UTF-8" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="color-notes-quick-links">
 
         <p class="visually-hidden">
-          <label>Don’t fill this out: <input name="bot-field"></label>
+          <label>Don’t fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
         </p>
 
         <label class="visually-hidden" for="qr-name">Full name</label>

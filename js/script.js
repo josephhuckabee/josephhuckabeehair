@@ -141,6 +141,11 @@ if (carousel) {
 
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
+const siteName = document.querySelector('.site-header h1');
+
+if (siteName) {
+  siteName.style.animationDelay = `${Math.random() * -50}s`;
+}
 
 if (navToggle && navLinks) {
   const mobileQuery = window.matchMedia('(max-width: 599px)');
@@ -172,4 +177,140 @@ if (navToggle && navLinks) {
       closeMenu();
     }
   });
+}
+
+const gallery = document.getElementById('photo-gallery-grid');
+
+if (gallery) {
+  const galleryImages = Array.from(gallery.querySelectorAll('img'));
+  const lightbox = document.createElement('div');
+  const lightboxFigure = document.createElement('figure');
+  const lightboxImage = document.createElement('img');
+  const lightboxCaption = document.createElement('figcaption');
+  const closeButton = document.createElement('button');
+  let activeTrigger = null;
+
+  lightbox.className = 'lightbox';
+  lightbox.setAttribute('role', 'dialog');
+  lightbox.setAttribute('aria-modal', 'true');
+  lightbox.setAttribute('aria-labelledby', 'lightbox-caption');
+
+  lightboxFigure.className = 'lightbox-figure';
+  lightboxImage.className = 'lightbox-image';
+  lightboxImage.decoding = 'async';
+  lightboxCaption.className = 'lightbox-caption';
+  lightboxCaption.id = 'lightbox-caption';
+  closeButton.className = 'lightbox-close';
+  closeButton.type = 'button';
+  closeButton.setAttribute('aria-label', 'Close image view');
+  closeButton.textContent = '×';
+
+  lightboxFigure.append(lightboxImage, lightboxCaption);
+  lightbox.append(lightboxFigure, closeButton);
+  document.body.appendChild(lightbox);
+
+  const getLargeImage = (img) => {
+    const src = img.currentSrc || img.src;
+    return src.replace('-480.jpg', '-1440.jpg').replace('-960.jpg', '-1440.jpg');
+  };
+
+  const openLightbox = (img) => {
+    activeTrigger = img;
+    lightboxImage.src = getLargeImage(img);
+    lightboxImage.alt = img.alt;
+    lightboxCaption.textContent = img.alt;
+    lightbox.classList.add('is-open');
+    document.body.classList.add('lightbox-open');
+    closeButton.focus();
+  };
+
+  const closeLightbox = () => {
+    lightbox.classList.remove('is-open');
+    document.body.classList.remove('lightbox-open');
+    lightboxImage.removeAttribute('src');
+    if (activeTrigger) {
+      activeTrigger.focus();
+    }
+    activeTrigger = null;
+  };
+
+  galleryImages.forEach((img) => {
+    img.tabIndex = 0;
+    img.setAttribute('role', 'button');
+    img.setAttribute('aria-label', `Open large view: ${img.alt}`);
+    img.setAttribute('title', 'Open large view');
+
+    img.addEventListener('click', () => openLightbox(img));
+    img.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openLightbox(img);
+      }
+    });
+  });
+
+  closeButton.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (event) => {
+    if (event.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && lightbox.classList.contains('is-open')) {
+      closeLightbox();
+    }
+  });
+}
+
+const instagramFeed = document.querySelector('[data-instagram-feed]');
+
+if (instagramFeed) {
+  const fallbackItems = instagramFeed.innerHTML;
+
+  const truncate = (text, maxLength = 120) => {
+    if (!text) {
+      return 'Joseph Huckabee editorial hair color on Instagram';
+    }
+    return text.length > maxLength ? `${text.slice(0, maxLength - 1).trim()}...` : text;
+  };
+
+  const renderInstagramItems = (items) => {
+    if (!Array.isArray(items) || items.length === 0) {
+      instagramFeed.innerHTML = fallbackItems;
+      return;
+    }
+
+    const sortedItems = [...items]
+      .filter((item) => item.permalink && (item.media_url || item.thumbnail_url))
+      .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
+      .slice(0, 6);
+
+    if (sortedItems.length === 0) {
+      instagramFeed.innerHTML = fallbackItems;
+      return;
+    }
+
+    instagramFeed.innerHTML = sortedItems.map((item) => {
+      const imageUrl = item.thumbnail_url || item.media_url;
+      const alt = truncate(item.caption);
+      return `
+        <a href="${item.permalink}" target="_blank" rel="noopener noreferrer" aria-label="View this Instagram post">
+          <img src="${imageUrl}" alt="${alt.replace(/"/g, '&quot;')}" width="480" height="480" loading="lazy" decoding="async">
+        </a>
+      `;
+    }).join('');
+  };
+
+  fetch('/.netlify/functions/instagram-feed', { headers: { Accept: 'application/json' } })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Instagram feed unavailable');
+      }
+      return response.json();
+    })
+    .then((data) => renderInstagramItems(data.items))
+    .catch(() => {
+      instagramFeed.innerHTML = fallbackItems;
+    });
 }
